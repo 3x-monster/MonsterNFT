@@ -3,3 +3,4 @@ node_modules/
 migrations/
 flattened/
 truffle-config.js
+package-lock.json
