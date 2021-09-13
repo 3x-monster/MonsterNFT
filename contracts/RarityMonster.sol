@@ -29,7 +29,7 @@ contract rarityMonster is ERC721 {
         uint _next_monster = next_monster;
         
         class[_next_monster] = _class;
-        level[_next_monster] = 1;
+        level[_next_monster] = _level;
         
         _safeMint(msg.sender, _next_monster);
         
