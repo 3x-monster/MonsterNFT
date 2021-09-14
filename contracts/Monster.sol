@@ -3,12 +3,13 @@ pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract Loot is ERC721 {
+contract Monster is ERC721 {
 
     address payable public owner;
 
-    string[] private monsters = [
-        "Dragons"
+    string[2][] private monsters = [
+        ["Kidnapper", "Robber"],
+        ["Axe Gang", "Headsman"]
     ];
         
     string[] private prefixes = [
@@ -29,14 +30,9 @@ contract Loot is ERC721 {
         "Degraded"
     ];
     
-    string[] private suffixes = [
-        "Bane",
-        "Root"
-    ];
-
     uint public next_monster;
 
-    uint constant TOTAL = 50;
+    uint constant TOTAL = 30;
     uint constant POINT = 9;
 
     mapping(uint => string) public monster;
@@ -52,8 +48,6 @@ contract Loot is ERC721 {
     mapping(uint => uint) public hit; 
     mapping(uint => uint) public critical;
     mapping(uint => uint) public parry;
-
-    mapping(uint => bool) public fexists;
 
     constructor() ERC721("Monster Manifested", "MMS"){
         owner = payable(msg.sender);
@@ -73,15 +67,16 @@ contract Loot is ERC721 {
     }
 
     function mintMonster() public payable{
-        require(msg.value == 10e18, "10FTM IS REQUIRED");
+        require(msg.value == 0.001e18, "10FTM IS REQUIRED");
 
         next_monster ++;
         uint _next_monster = next_monster;
 
         uint rand = uint(keccak256(abi.encodePacked(_next_monster)));
         
-        monster[_next_monster] = monsters[rand % monsters.length];
-        suffix[_next_monster] = suffixes[rand % suffixes.length];
+        string memory s = monsters[rand % monsters.length][1];
+        monster[_next_monster] = monsters[rand % monsters.length][0];
+        suffix[_next_monster] = s;
         prefix[_next_monster] = getPrefix(_next_monster);
 
         uint[] memory divides = divide(_next_monster);
@@ -94,19 +89,58 @@ contract Loot is ERC721 {
             }
         }
 
-        health_Point[_next_monster] = divide_points[0] - 0;
-        physical_damage_point[_next_monster] = divide_points[1] - divide_points[0];
-        magical_damage_point[_next_monster] = divide_points[2] - divide_points[1];
-        physical_defence[_next_monster] = divide_points[3] - divide_points[2];
-        magical_defence[_next_monster] = divide_points[4] - divide_points[3];
-        dodge[_next_monster] = divide_points[5] - divide_points[4];
-        hit[_next_monster] = divide_points[6] - divide_points[5]; 
-        critical[_next_monster] = divide_points[7] - divide_points[6];
-        parry[_next_monster] = divide_points[8] - divide_points[7];
+        uint a; uint b; uint c; uint d; uint e; uint f; uint g; uint h; uint k;
+        (a, b, c, d, e, f, g, h, k) = get_base_points(s);
+
+        health_Point[_next_monster] = divide_points[0] - 0 + a;
+        physical_damage_point[_next_monster] = divide_points[1] - divide_points[0] + b;
+        magical_damage_point[_next_monster] = divide_points[2] - divide_points[1] + c;
+        physical_defence[_next_monster] = divide_points[3] - divide_points[2] + d;
+        magical_defence[_next_monster] = divide_points[4] - divide_points[3] + e;
+        dodge[_next_monster] = divide_points[5] - divide_points[4] + f;
+        hit[_next_monster] = divide_points[6] - divide_points[5] + g; 
+        critical[_next_monster] = divide_points[7] - divide_points[6] + h;
+        parry[_next_monster] = divide_points[8] - divide_points[7] + k;
         
         _safeMint(msg.sender, _next_monster);
         
         emit monstered(msg.sender, _next_monster);
+    }
+
+    function get_base_points(string memory _suffix) public pure returns(uint, uint, uint, uint, uint, uint, uint, uint, uint){
+        if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Headsman"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Guard"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Hunter"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Wizard"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0); 
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
+            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        }
+
+        return (0, 0, 0, 0, 0, 0, 0, 0, 0);
     }
 
     function divide(uint _token_id) public pure returns (uint[] memory){
@@ -174,9 +208,11 @@ contract Loot is ERC721 {
 
         string memory output = string(abi.encodePacked(
             parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7], 
-            parts[8], parts[9], parts[10], parts[11], parts[12], parts[13], parts[14], 
-            parts[15], parts[16], parts[17], parts[18], parts[19], parts[20]));
+            parts[8], parts[9], parts[10]));
         
+        output = string(abi.encodePacked(output, parts[11], parts[12], parts[13], parts[14], 
+            parts[15], parts[16], parts[17], parts[18], parts[19], parts[20]));
+
         string memory json = Base64.encode(bytes(string(
             abi.encodePacked('{"name": "Bag #', toString(_token_id), '", "description": "Loot is randomized adventurer gear generated and stored on chain. Stats, images, and other functionality are intentionally omitted for others to interpret. Feel free to use Loot in any way you want.", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(output)), '"}'))));
         output = string(abi.encodePacked('data:application/json;base64,', json));
