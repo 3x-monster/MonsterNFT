@@ -66,17 +66,14 @@ contract Monster is ERC721 {
         return prefixes[rand % prefixes.length];
     }
 
-    function mintMonster() public payable{
-        require(msg.value == 0.001e18, "10FTM IS REQUIRED");
-
+    function mintMonster() public{
         next_monster ++;
         uint _next_monster = next_monster;
 
         uint rand = uint(keccak256(abi.encodePacked(_next_monster)));
         
-        string memory s = monsters[rand % monsters.length][1];
         monster[_next_monster] = monsters[rand % monsters.length][0];
-        suffix[_next_monster] = s;
+        suffix[_next_monster] = monsters[rand % monsters.length][1];
         prefix[_next_monster] = getPrefix(_next_monster);
 
         uint[] memory divides = divide(_next_monster);
@@ -89,58 +86,62 @@ contract Monster is ERC721 {
             }
         }
 
-        uint a; uint b; uint c; uint d; uint e; uint f; uint g; uint h; uint k;
-        (a, b, c, d, e, f, g, h, k) = get_base_points(s);
-
-        health_Point[_next_monster] = divide_points[0] - 0 + a;
-        physical_damage_point[_next_monster] = divide_points[1] - divide_points[0] + b;
-        magical_damage_point[_next_monster] = divide_points[2] - divide_points[1] + c;
-        physical_defence[_next_monster] = divide_points[3] - divide_points[2] + d;
-        magical_defence[_next_monster] = divide_points[4] - divide_points[3] + e;
-        dodge[_next_monster] = divide_points[5] - divide_points[4] + f;
-        hit[_next_monster] = divide_points[6] - divide_points[5] + g; 
-        critical[_next_monster] = divide_points[7] - divide_points[6] + h;
-        parry[_next_monster] = divide_points[8] - divide_points[7] + k;
+        set_points(_next_monster, divide_points, monsters[rand % monsters.length][1]);
         
         _safeMint(msg.sender, _next_monster);
         
         emit monstered(msg.sender, _next_monster);
     }
 
-    function get_base_points(string memory _suffix) public pure returns(uint, uint, uint, uint, uint, uint, uint, uint, uint){
-        if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+    function set_points(uint _next_monster, uint[] memory _divide_points, string memory _suffix) private{
+        uint8[9] memory basePoints = get_base_points(_suffix);
+
+        health_Point[_next_monster] = _divide_points[0] - 0 + basePoints[0];
+        physical_damage_point[_next_monster] = _divide_points[1] - _divide_points[0] + basePoints[1];
+        magical_damage_point[_next_monster] = _divide_points[2] - _divide_points[1] + basePoints[2];
+        physical_defence[_next_monster] = _divide_points[3] - _divide_points[2] + basePoints[3];
+        magical_defence[_next_monster] = _divide_points[4] - _divide_points[3] + basePoints[4];
+        dodge[_next_monster] = _divide_points[5] - _divide_points[4] + basePoints[5];
+        hit[_next_monster] = _divide_points[6] - _divide_points[5] + basePoints[6]; 
+        critical[_next_monster] = _divide_points[7] - _divide_points[6] + basePoints[7];
+        parry[_next_monster] = TOTAL - _divide_points[7] + basePoints[8];
+    }
+
+    function get_base_points(string memory _suffix) public pure returns(uint8[9] memory){
+        uint8[9] memory basePoints;
+        if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Robber"))){
+            basePoints = [8, 10, 5, 6, 4, 10, 10, 5, 2];
         } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Headsman"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+            basePoints = [9, 7, 4, 6, 6, 5, 10, 10, 3];
         } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Guard"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+            basePoints = [12, 5, 5, 10, 10, 3, 4, 3, 8];
         } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Hunter"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+            basePoints = [8, 9, 9, 7, 7, 8, 5, 5, 2];
         } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Wizard"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0); 
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
-        }else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("robber"))){
-            return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+            basePoints = [6, 3, 12, 4, 8, 10, 10, 5, 2];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Summoner"))){
+            basePoints = [6, 5, 10, 8, 8, 7, 3, 5, 8];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Warrior"))){
+            basePoints = [10, 12, 2, 12, 4, 2, 7, 7, 4];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Demon"))){
+            basePoints = [12, 8, 7, 12, 5, 9, 2, 2, 3];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Follower"))){
+            basePoints = [8, 9, 7, 7, 9, 5, 5, 5, 5];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Shaman"))){
+            basePoints = [10, 5, 5, 12, 12, 5, 6, 3, 2];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Archer"))){
+            basePoints = [6, 12, 3, 3, 2, 12, 12, 8, 2];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Spear Thrower"))){
+            basePoints = [6, 12, 3, 4, 5, 8, 8, 8, 6];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Immortal"))){
+            basePoints = [7, 5, 8, 5, 5, 12, 8, 6, 4];
+        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Titan"))){
+            basePoints = [15, 5, 5, 8, 8, 2, 7, 2, 8];
+        }else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Dark Knight"))){
+            basePoints = [8, 9, 5, 10, 6, 5, 4, 8, 5];
         }
 
-        return (0, 0, 0, 0, 0, 0, 0, 0, 0);
+        return basePoints;
     }
 
     function divide(uint _token_id) public pure returns (uint[] memory){
@@ -220,7 +221,8 @@ contract Monster is ERC721 {
         return output;
     }
 
-    function claim() public {
+    function claim() public payable{
+        require(msg.value == 0.001e18, "10FTM IS REQUIRED");
         require(next_monster >= 0 && next_monster < 10000, "Token ID invalid");
         mintMonster();
     }
