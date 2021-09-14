@@ -261,7 +261,7 @@ contract Monster is ERC721 {
 
         get_base_points(professions[rand % professions.length]);
 
-        health_Point[_next_monster] = divide_points[0] - 0 + basePoints[0];
+        health_Point[_next_monster] = divide_points[0] + basePoints[0];
         physical_damage_point[_next_monster] = divide_points[1] - divide_points[0] + basePoints[1];
         magical_damage_point[_next_monster] = divide_points[2] - divide_points[1] + basePoints[2];
         physical_defence[_next_monster] = divide_points[3] - divide_points[2] + basePoints[3];
