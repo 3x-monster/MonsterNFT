@@ -9,7 +9,7 @@ contract Monster is ERC721 {
 
     mapping(uint => string) public profession;
 
-    string[] private monsters = [
+    string[79] private monsters = [
         "Kidnapper",
         "Axe Gang",
         "Jackstraw",
@@ -91,7 +91,7 @@ contract Monster is ERC721 {
         "Decepticon"
     ];
 
-    uint[] private professions = [
+    uint[79] private professions = [
         1,
         2,
         3,
@@ -173,7 +173,7 @@ contract Monster is ERC721 {
         7
     ];
         
-    string[] private prefixes = [
+    string[15] private prefixes = [
         "Angry",
         "Hungry",
         "Scary",
@@ -210,6 +210,8 @@ contract Monster is ERC721 {
     mapping(uint => uint) public critical;
     mapping(uint => uint) public parry;
 
+    uint[POINT] private basePoints;
+
     constructor() ERC721("Monster Manifested", "MMS"){
         owner = payable(msg.sender);
         profession[1] = "Robber";
@@ -229,11 +231,6 @@ contract Monster is ERC721 {
         profession[15] = "Dark Knight";
     }
 
-    modifier onlyOwner() {
-        require(owner == msg.sender, "Only Owner");
-        _;
-    }
-
     event monstered(address indexed owner, uint monster);
     
     function getPrefix(uint _token_id) public view returns (string memory) {
@@ -249,7 +246,7 @@ contract Monster is ERC721 {
         uint rand = uint(keccak256(abi.encodePacked(_next_monster)));
         
         monster[_next_monster] = monsters[rand % monsters.length];
-        suffix[_next_monster] = professions[rand % monsters.length];
+        suffix[_next_monster] = professions[rand % professions.length];
         prefix[_next_monster] = getPrefix(_next_monster);
 
         uint[] memory divides = divide(_next_monster);
@@ -262,62 +259,55 @@ contract Monster is ERC721 {
             }
         }
 
-        set_points(_next_monster, divide_points, professions[rand % monsters.length]);
-        
+        get_base_points(professions[rand % professions.length]);
+
+        health_Point[_next_monster] = divide_points[0] - 0 + basePoints[0];
+        physical_damage_point[_next_monster] = divide_points[1] - divide_points[0] + basePoints[1];
+        magical_damage_point[_next_monster] = divide_points[2] - divide_points[1] + basePoints[2];
+        physical_defence[_next_monster] = divide_points[3] - divide_points[2] + basePoints[3];
+        magical_defence[_next_monster] = divide_points[4] - divide_points[3] + basePoints[4];
+        dodge[_next_monster] = divide_points[5] - divide_points[4] + basePoints[5];
+        hit[_next_monster] = divide_points[6] - divide_points[5] + basePoints[6]; 
+        critical[_next_monster] = divide_points[7] - divide_points[6] + basePoints[7];
+        parry[_next_monster] = TOTAL - divide_points[7] + basePoints[8];
+ 
         _safeMint(msg.sender, _next_monster);
         
         emit monstered(msg.sender, _next_monster);
     }
 
-    function set_points(uint _next_monster, uint[] memory _divide_points, uint _suffix) private{
-        uint8[9] memory basePoints = get_base_points(_suffix);
-
-        health_Point[_next_monster] = _divide_points[0] - 0 + basePoints[0];
-        physical_damage_point[_next_monster] = _divide_points[1] - _divide_points[0] + basePoints[1];
-        magical_damage_point[_next_monster] = _divide_points[2] - _divide_points[1] + basePoints[2];
-        physical_defence[_next_monster] = _divide_points[3] - _divide_points[2] + basePoints[3];
-        magical_defence[_next_monster] = _divide_points[4] - _divide_points[3] + basePoints[4];
-        dodge[_next_monster] = _divide_points[5] - _divide_points[4] + basePoints[5];
-        hit[_next_monster] = _divide_points[6] - _divide_points[5] + basePoints[6]; 
-        critical[_next_monster] = _divide_points[7] - _divide_points[6] + basePoints[7];
-        parry[_next_monster] = TOTAL - _divide_points[7] + basePoints[8];
-    }
-
-    function get_base_points(uint _suffix) public pure returns(uint8[9] memory){
-        uint8[9] memory basePoints;
-        if (_suffix == 0){
+    function get_base_points(uint _suffix) private {
+        if (_suffix == 1){
             basePoints = [8, 10, 5, 6, 4, 10, 10, 5, 2];
-        } else if (_suffix == 1){
-            basePoints = [9, 7, 4, 6, 6, 5, 10, 10, 3];
         } else if (_suffix == 2){
-            basePoints = [12, 5, 5, 10, 10, 3, 4, 3, 8];
+            basePoints = [9, 7, 4, 6, 6, 5, 10, 10, 3];
         } else if (_suffix == 3){
-            basePoints = [8, 9, 9, 7, 7, 8, 5, 5, 2];
+            basePoints = [12, 5, 5, 10, 10, 3, 4, 3, 8];
         } else if (_suffix == 4){
-            basePoints = [6, 3, 12, 4, 8, 10, 10, 5, 2];
+            basePoints = [8, 9, 9, 7, 7, 8, 5, 5, 2];
         } else if (_suffix == 5){
-            basePoints = [6, 5, 10, 8, 8, 7, 3, 5, 8];
+            basePoints = [6, 3, 12, 4, 8, 10, 10, 5, 2];
         } else if (_suffix == 6){
-            basePoints = [10, 12, 2, 12, 4, 2, 7, 7, 4];
+            basePoints = [6, 5, 10, 8, 8, 7, 3, 5, 8];
         } else if (_suffix == 7){
-            basePoints = [12, 8, 7, 12, 5, 9, 2, 2, 3];
+            basePoints = [10, 12, 2, 12, 4, 2, 7, 7, 4];
         } else if (_suffix == 8){
-            basePoints = [8, 9, 7, 7, 9, 5, 5, 5, 5];
+            basePoints = [12, 8, 7, 12, 5, 9, 2, 2, 3];
         } else if (_suffix == 9){
-            basePoints = [10, 5, 5, 12, 12, 5, 6, 3, 2];
+            basePoints = [8, 9, 7, 7, 9, 5, 5, 5, 5];
         } else if (_suffix == 10){
-            basePoints = [6, 12, 3, 3, 2, 12, 12, 8, 2];
+            basePoints = [10, 5, 5, 12, 12, 5, 6, 3, 2];
         } else if (_suffix == 11){
-            basePoints = [6, 12, 3, 4, 5, 8, 8, 8, 6];
+            basePoints = [6, 12, 3, 3, 2, 12, 12, 8, 2];
         } else if (_suffix == 12){
-            basePoints = [7, 5, 8, 5, 5, 12, 8, 6, 4];
+            basePoints = [6, 12, 3, 4, 5, 8, 8, 8, 6];
         } else if (_suffix == 13){
+            basePoints = [7, 5, 8, 5, 5, 12, 8, 6, 4];
+        } else if (_suffix == 14){
             basePoints = [15, 5, 5, 8, 8, 2, 7, 2, 8];
-        }else if (_suffix == 14){
+        }else if (_suffix == 15){
             basePoints = [8, 9, 5, 10, 6, 5, 4, 8, 5];
         }
-
-        return basePoints;
     }
 
     function divide(uint _token_id) public pure returns (uint[] memory){
@@ -403,7 +393,8 @@ contract Monster is ERC721 {
         mintMonster();
     }
     
-    function ownerClaim() public onlyOwner {
+    function ownerClaim() public {
+        require(msg.sender == owner, "Only Owner");
         require(next_monster >= 10000 && next_monster < 11000, "Token ID invalid");
         mintMonster();
     }
@@ -430,7 +421,9 @@ contract Monster is ERC721 {
         return string(buffer);
     }
 
-    function withdraw() public onlyOwner{
+    function withdraw() public {
+        require(msg.sender == owner, "Only Owner");
+
         uint amount = address(this).balance;
 
         (bool success, ) = owner.call{value: amount}("");
