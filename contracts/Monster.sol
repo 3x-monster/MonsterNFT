@@ -7,86 +7,170 @@ contract Monster is ERC721 {
 
     address payable public owner;
 
-    string[2][] private monsters = [
-        ["Kidnapper", "Robber"],
-        ["Axe Gang", "Headsman"],
-        ["Jackstraw", "Guard"],
-        ["Serpent", "Hunter"],
-        ["Toad", "Headsman"],
-        ["Tarantula", "Wizard"],
-        ["Man-eating Tree", "Headsman"],
-        ["Basilisk", "Summoner"],
-        ["Orc", "Warrior"],
-        ["Corruptor", "Demon"],
-        ["Radiant Rat", "Headsman"],
-        ["Giant Crocodile", "Warrior"],
-        ["Forest Snowman", "Hunter"],
-        ["Dryad", "Follower"],
-        ["Giant Elephant", "Guard"],
-        ["Giant Furbolg", "Hunter"],
-        ["Werewolf", "Shaman"],
-        ["Centaur", "Archer"],
-        ["Bariour", "Spear Thrower"],
-        ["Fenrir", "Demon"],
-        ["Vampire Bat", "Headsman"],
-        ["Sand Ghost", "Immortal"],
-        ["Ghoul", "Demon"],
-        ["Ancient Boulder", "Titan"],
-        ["Maffia", "Robber"],
-        ["Lizard Man", "Guard"],
-        ["Drug Dealer", "Robber"],
-        ["Tauren", "Warrior"],
-        ["Ape", "Warrior"],
-        ["King Kong", "Titan"],
-        ["Dwarf Orc", "Shaman"],
-        ["Dwarf", "Warrior"],
-        ["Temple Guard", "Guard"],
-        ["Temple Warrior", "Warrior"],
-        ["Dullahan", "Dark Knight"],
-        ["Gargoyle", "Guard"],
-        ["Skeleton Warrior", "Warrior"],
-        ["Skeleton Summoner", "Summoner"],
-        ["Skeleton Archer", "Archer"],
-        ["Echinda", "Immortal"],
-        ["Empusae", "Immortal"],
-        ["Gnome", "Robber"],
-        ["Ordinary Zombie", "Guard"],
-        ["Vampire Zombie", "Wizard"],
-        ["Captain Zombie", "Summoner"],
-        ["Fox Demon", "Wizard"],
-        ["Night Elf", "Immortal"],
-        ["Ghost", "Immortal"],
-        ["Banshee", "Wizard"],
-        ["Witch", "Shaman"],
-        ["Lich", "Immortal"],
-        ["Tomb Raider", "Robber"],
-        ["Mummy", "Dark Knight"],
-        ["Immortal", "Immortal"],
-        ["Vampire", "Demon"],
-        ["Fafnir", "Headsman"],
-        ["Drake", "Hunter"],
-        ["Dragon", "Titan"],
-        ["Griffin", "Headsman"],
-        ["Alien Guard", "Guard"],
-        ["Alien Warrior", "Warrior"],
-        ["Alien Leader", "Summoner"],
-        ["Falcon", "Hunter"],
-        ["Pterosaur", "Spear Thrower"],
-        ["Giant", "Titan"],
-        ["Medusa", "Wizard"],
-        ["Grendel", "Demon"],
-        ["Geryon", "Titan"],
-        ["Pirate", "Robber"],
-        ["Black Manta", "Warrior"],
-        ["Orm Marius", "Summoner"],
-        ["Alien", "Warrior"],
-        ["Na'vi Warrior", "Warrior"],
-        ["Na'vi Archer", "Archer"],
-        ["Na'vi Leader", "Summoner"],
-        ["T-800", "Warrior"],
-        ["T-1000", "Warrior"],
-        ["Electronic Squid", "Follower"],
-        ["Decepticon", "Warrior"]
+    mapping(uint => string) public profession;
+
+    string[] private monsters = [
+        "Kidnapper",
+        "Axe Gang",
+        "Jackstraw",
+        "Serpent",
+        "Toad",
+        "Tarantula",
+        "Man-eating Tree",
+        "Basilisk",
+        "Orc",
+        "Corruptor",
+        "Radiant Rat",
+        "Giant Crocodile",
+        "Forest Snowman",
+        "Dryad",
+        "Giant Elephant",
+        "Giant Furbolg",
+        "Werewolf",
+        "Centaur",
+        "Bariour",
+        "Fenrir",
+        "Vampire Bat",
+        "Sand Ghost",
+        "Ghoul",
+        "Ancient Boulder",
+        "Maffia",
+        "Lizard Man",
+        "Drug Dealer",
+        "Tauren",
+        "Ape",
+        "King Kong",
+        "Dwarf Orc",
+        "Dwarf",
+        "Temple Guard",
+        "Temple Warrior",
+        "Dullahan",
+        "Gargoyle",
+        "Skeleton Warrior",
+        "Skeleton Summoner",
+        "Skeleton Archer",
+        "Echinda",
+        "Empusae",
+        "Gnome",
+        "Ordinary Zombie",
+        "Vampire Zombie",
+        "Captain Zombie",
+        "Fox Demon",
+        "Night Elf",
+        "Ghost",
+        "Banshee",
+        "Witch",
+        "Lich",
+        "Tomb Raider",
+        "Mummy",
+        "Immortal",
+        "Vampire",
+        "Fafnir",
+        "Drake",
+        "Dragon",
+        "Griffin",
+        "Alien Guard",
+        "Alien Warrior",
+        "Alien Leader",
+        "Falcon",
+        "Pterosaur",
+        "Giant",
+        "Medusa",
+        "Grendel",
+        "Geryon",
+        "Pirate",
+        "Black Manta",
+        "Orm Marius",
+        "Alien",
+        "Na'vi Warrior",
+        "Na'vi Archer",
+        "Na'vi Leader",
+        "T-800",
+        "T-1000",
+        "Electronic Squid",
+        "Decepticon"
+    ];
+
+    uint[] private professions = [
+        1,
+        2,
+        3,
+        4,
+        2,
+        5,
+        2,
+        6,
+        7,
+        8,
+        2,
+        7,
+        4,
+        9,
+        3,
+        4,
+        10,
+        11,
+        12,
+        8,
+        2,
+        13,
+        8,
+        14,
+        1,
+        3,
+        1,
+        7,
+        7,
+        14,
+        10,
+        7,
+        3,
+        7,
+        15,
+        3,
+        7,
+        6,
+        11,
+        13,
+        13,
+        1,
+        3,
+        5,
+        6,
+        5,
+        13,
+        13,
+        5,
+        10,
+        13,
+        1,
+        15,
+        13,
+        8,
+        2,
+        4,
+        14,
+        2,
+        3,
+        7,
+        6,
+        4,
+        12,
+        14,
+        5,
+        8,
+        14,
+        1,
+        7,
+        6,
+        7,
+        7,
+        11,
+        6,
+        7,
+        7,
+        9,
+        7
     ];
         
     string[] private prefixes = [
@@ -114,7 +198,7 @@ contract Monster is ERC721 {
 
     mapping(uint => string) public monster;
     mapping(uint => string) public prefix;
-    mapping(uint => string) public suffix;
+    mapping(uint => uint) public suffix;
 
     mapping(uint => uint) public health_Point;
     mapping(uint => uint) public physical_damage_point;
@@ -128,6 +212,21 @@ contract Monster is ERC721 {
 
     constructor() ERC721("Monster Manifested", "MMS"){
         owner = payable(msg.sender);
+        profession[1] = "Robber";
+        profession[2] = "Headsman";
+        profession[3] = "Guard";
+        profession[4] = "Hunter";
+        profession[5] = "Wizard";
+        profession[6] = "Summoner";
+        profession[7] = "Warrior";
+        profession[8] = "Demon";
+        profession[9] = "Follower";
+        profession[10] = "Shaman";
+        profession[11] = "Archer";
+        profession[12] = "Spear Thrower";
+        profession[13] = "Immortal";
+        profession[14] = "Titan";
+        profession[15] = "Dark Knight";
     }
 
     modifier onlyOwner() {
@@ -143,14 +242,14 @@ contract Monster is ERC721 {
         return prefixes[rand % prefixes.length];
     }
 
-    function mintMonster() public{
+    function mintMonster() private{
         next_monster ++;
         uint _next_monster = next_monster;
 
         uint rand = uint(keccak256(abi.encodePacked(_next_monster)));
         
-        monster[_next_monster] = monsters[rand % monsters.length][0];
-        suffix[_next_monster] = monsters[rand % monsters.length][1];
+        monster[_next_monster] = monsters[rand % monsters.length];
+        suffix[_next_monster] = professions[rand % monsters.length];
         prefix[_next_monster] = getPrefix(_next_monster);
 
         uint[] memory divides = divide(_next_monster);
@@ -163,14 +262,14 @@ contract Monster is ERC721 {
             }
         }
 
-        set_points(_next_monster, divide_points, monsters[rand % monsters.length][1]);
+        set_points(_next_monster, divide_points, professions[rand % monsters.length]);
         
         _safeMint(msg.sender, _next_monster);
         
         emit monstered(msg.sender, _next_monster);
     }
 
-    function set_points(uint _next_monster, uint[] memory _divide_points, string memory _suffix) private{
+    function set_points(uint _next_monster, uint[] memory _divide_points, uint _suffix) private{
         uint8[9] memory basePoints = get_base_points(_suffix);
 
         health_Point[_next_monster] = _divide_points[0] - 0 + basePoints[0];
@@ -184,37 +283,37 @@ contract Monster is ERC721 {
         parry[_next_monster] = TOTAL - _divide_points[7] + basePoints[8];
     }
 
-    function get_base_points(string memory _suffix) public pure returns(uint8[9] memory){
+    function get_base_points(uint _suffix) public pure returns(uint8[9] memory){
         uint8[9] memory basePoints;
-        if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Robber"))){
+        if (_suffix == 0){
             basePoints = [8, 10, 5, 6, 4, 10, 10, 5, 2];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Headsman"))){
+        } else if (_suffix == 1){
             basePoints = [9, 7, 4, 6, 6, 5, 10, 10, 3];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Guard"))){
+        } else if (_suffix == 2){
             basePoints = [12, 5, 5, 10, 10, 3, 4, 3, 8];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Hunter"))){
+        } else if (_suffix == 3){
             basePoints = [8, 9, 9, 7, 7, 8, 5, 5, 2];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Wizard"))){
+        } else if (_suffix == 4){
             basePoints = [6, 3, 12, 4, 8, 10, 10, 5, 2];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Summoner"))){
+        } else if (_suffix == 5){
             basePoints = [6, 5, 10, 8, 8, 7, 3, 5, 8];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Warrior"))){
+        } else if (_suffix == 6){
             basePoints = [10, 12, 2, 12, 4, 2, 7, 7, 4];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Demon"))){
+        } else if (_suffix == 7){
             basePoints = [12, 8, 7, 12, 5, 9, 2, 2, 3];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Follower"))){
+        } else if (_suffix == 8){
             basePoints = [8, 9, 7, 7, 9, 5, 5, 5, 5];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Shaman"))){
+        } else if (_suffix == 9){
             basePoints = [10, 5, 5, 12, 12, 5, 6, 3, 2];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Archer"))){
+        } else if (_suffix == 10){
             basePoints = [6, 12, 3, 3, 2, 12, 12, 8, 2];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Spear Thrower"))){
+        } else if (_suffix == 11){
             basePoints = [6, 12, 3, 4, 5, 8, 8, 8, 6];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Immortal"))){
+        } else if (_suffix == 12){
             basePoints = [7, 5, 8, 5, 5, 12, 8, 6, 4];
-        } else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Titan"))){
+        } else if (_suffix == 13){
             basePoints = [15, 5, 5, 8, 8, 2, 7, 2, 8];
-        }else if (keccak256(abi.encodePacked(_suffix)) == keccak256(abi.encodePacked("Dark Knight"))){
+        }else if (_suffix == 14){
             basePoints = [8, 9, 5, 10, 6, 5, 4, 8, 5];
         }
 
