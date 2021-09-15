@@ -329,49 +329,53 @@ contract Monster is ERC721 {
     }
 
     function tokenURI(uint _token_id) override public view returns (string memory) {
-        string[21] memory parts;
+        string[23] memory parts;
 
         parts[0] = '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350"><style>.base { fill: white; font-family: serif; font-size: 14px; }</style><rect width="100%" height="100%" fill="black" /><text x="10" y="20" class="base">';
 
-        parts[1] = string(abi.encodePacked("monster", " ", prefix[_token_id], " ", monster[_token_id], " ", suffix[_token_id]));
+        parts[1] = string(abi.encodePacked(prefix[_token_id], " ", monster[_token_id]));
 
         parts[2] = '</text><text x="10" y="40" class="base">';
 
-        parts[3] = string(abi.encodePacked("health_Point", " ", health_Point[_token_id]));
+        parts[3] = string(abi.encodePacked(profession[suffix[_token_id]]));
 
         parts[4] = '</text><text x="10" y="60" class="base">';
 
-        parts[5] = string(abi.encodePacked("physical_damage_point", " ", physical_damage_point[_token_id]));
+        parts[5] = string(abi.encodePacked("Health Point", " ", toString(health_Point[_token_id])));
 
         parts[6] = '</text><text x="10" y="80" class="base">';
 
-        parts[7] = string(abi.encodePacked("magical_damage_point", " ", magical_damage_point[_token_id]));
+        parts[7] = string(abi.encodePacked("Physical Damage Point", " ", toString(physical_damage_point[_token_id])));
 
         parts[8] = '</text><text x="10" y="100" class="base">';
 
-        parts[9] = string(abi.encodePacked("physical_defence", " ", physical_defence[_token_id]));
+        parts[9] = string(abi.encodePacked("Magical Damage Point", " ", toString(magical_damage_point[_token_id])));
 
         parts[10] = '</text><text x="10" y="120" class="base">';
 
-        parts[11] = string(abi.encodePacked("magical_defence", " ", magical_defence[_token_id]));
+        parts[11] = string(abi.encodePacked("Physical Defence", " ", toString(physical_defence[_token_id])));
 
         parts[12] = '</text><text x="10" y="140" class="base">';
 
-        parts[13] = string(abi.encodePacked("dodge", " ", dodge[_token_id]));
+        parts[13] = string(abi.encodePacked("Magical Defence", " ", toString(magical_defence[_token_id])));
 
         parts[14] = '</text><text x="10" y="160" class="base">';
 
-        parts[15] = string(abi.encodePacked("hit", " ", hit[_token_id]));
+        parts[15] = string(abi.encodePacked("Dodge", " ", toString(dodge[_token_id])));
 
-        parts[16] = '</text><text x="10" y="160" class="base">';
+        parts[16] = '</text><text x="10" y="180" class="base">';
 
-        parts[17] = string(abi.encodePacked("critical", " ", critical[_token_id]));
+        parts[17] = string(abi.encodePacked("Hit", " ", toString(hit[_token_id])));
+
+        parts[18] = '</text><text x="10" y="200" class="base">';
+
+        parts[19] = string(abi.encodePacked("Critical", " ", toString(critical[_token_id])));
         
-        parts[18] = '</text><text x="10" y="160" class="base">';
+        parts[20] = '</text><text x="10" y="220" class="base">';
 
-        parts[19] = string(abi.encodePacked("parry", " ", parry[_token_id]));
+        parts[21] = string(abi.encodePacked("Parry", " ", toString(parry[_token_id])));
 
-        parts[20] = '</text></svg>';
+        parts[22] = '</text></svg>';
 
         string memory output = string(abi.encodePacked(
             parts[0], parts[1], parts[2], parts[3], parts[4], parts[5], parts[6], parts[7], 
@@ -379,6 +383,8 @@ contract Monster is ERC721 {
         
         output = string(abi.encodePacked(output, parts[11], parts[12], parts[13], parts[14], 
             parts[15], parts[16], parts[17], parts[18], parts[19], parts[20]));
+
+        output = string(abi.encodePacked(output, parts[21], parts[22]));
 
         string memory json = Base64.encode(bytes(string(
             abi.encodePacked('{"name": "Bag #', toString(_token_id), '", "description": "Monster NFT is a kind of NFT assets randomized generated and stored on blockchain with different names, prefessions, basic attribute value and random attribute value, which can be used in any scene. The rarity of monster NFT is determined by its peofession, arrtribute value and game ecology. Level, scene and image is ommitted as part of further expansions.", "image": "data:image/svg+xml;base64,', Base64.encode(bytes(output)), '"}'))));
