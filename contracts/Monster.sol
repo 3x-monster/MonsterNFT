@@ -394,7 +394,7 @@ contract Monster is ERC721 {
     }
 
     function claim() public payable{
-        require(msg.value == 0.001e18, "10FTM IS REQUIRED");
+        require(msg.value == 10e18, "10FTM IS REQUIRED");
         require(next_monster >= 0 && next_monster < 10000, "Token ID invalid");
         mintMonster();
     }
