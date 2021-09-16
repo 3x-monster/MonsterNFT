@@ -90,7 +90,7 @@ contract rarityBattle {
 
     function transfer(uint from, uint to, uint amount) external returns (bool) {
         require(_isApprovedOrOwner(from));
-        _transferTokens(from, to, amount);
+        _transferTokens(from, to, amount*1e18);
         return true;
     }
 
