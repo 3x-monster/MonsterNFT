@@ -40,77 +40,19 @@ There are 79 kinds of monsters and 15 kinds of careers that have the correspondi
 
 We design some interesting adjectives that can be randomly united with monsters as follows:
 
-Angry
-
----
-
-Hungry
-
----
-
-Scary
-
----
-
-Damned
-
----
-
-Corrupt
-
----
-
-Gloomy
-
----
-
-Horrific
-
----
-
-Ghostly
-
----
-
-Freaky
-
----
-
-Amnesic
-
----
-
-Painful
-
----
-
-Overjoyed
-
----
-
-Sorrowful
-
----
-
-Blusterous
-
----
-
-Degraded
-
----
+Angry, Hungry, Scary, Damned, Corrupt, Gloomy, Horrific, Ghostly, Freaky, Amnesic, Painful, Overjoyed, Sorrowful, Blusterous, Degraded
 
 ## Future Outlook
 
 A complete metaverse contains not only heroes but also monsters. Community developers are welcome to interact with the metaverse to build more fun game scenes. Please feel free to contact us for any developers, art designers, and game planners who are interested in our game. Let's strive together to create the metaverse ecology.
 
-Contact Us
+**Contact Us**
 
 Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)
 
 Twitter: [https://twitter.com/Crypto_Shuraba](https://twitter.com/Crypto_Shuraba)
 
-Link Exchange
+**Link Exchange**
 
 Rarity: [https://github.com/andrecronje/rarity](https://github.com/andrecronje/rarity)
 
