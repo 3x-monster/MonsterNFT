@@ -89,7 +89,6 @@ A complete metaverse contains not only heroes but also monsters. Community devel
 | Rarity Battle Contract   | [0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7)       |
 | Monster Contract         | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE)       |
 
-[Addresses](README%2045600350dd3a4a71aaddb5cc7b5d87f7/Addresses%20bfa1c0a3d9e641f6bc3833eec4c039e7.csv)
 
 **Contact Us**
 
