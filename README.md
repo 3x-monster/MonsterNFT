@@ -28,13 +28,13 @@ The total amount of Monster NFT is 11,000. Among which, the first 10,000 are ran
 
 Monster's property is constituted of 60 points of basic properties and 30 points of random properties. The basic properties are as follows:
 
-[Untitled](Instruction%2033fdc819ba2b4935bd97b5799f22fd3d/Untitled%20Database%20208c9590cd6049638dec4df141b0142b.csv)
+[Instantly View](Instruction%2033fdc819ba2b4935bd97b5799f22fd3d/Untitled%20Database%20208c9590cd6049638dec4df141b0142b.csv)
 
 ## Monster Dictionary
 
 There are 79 kinds of monsters and 15 kinds of careers that have the corresponding numbers as follows:
 
-[Untitled](Instruction%2033fdc819ba2b4935bd97b5799f22fd3d/Untitled%20Database%201fada4857ec246dca647cad8b943616c.csv)
+[Instantly View](Instruction%2033fdc819ba2b4935bd97b5799f22fd3d/Untitled%20Database%201fada4857ec246dca647cad8b943616c.csv)
 
 ## Monster Prefix
 
