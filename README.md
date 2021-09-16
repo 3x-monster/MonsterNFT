@@ -2,6 +2,15 @@
 
 **Salute to Rarity and Loot**
 
+# Addresses
+
+| Name      | Address |
+| ----------- | ----------- |
+| Rarity Contract          | [0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb](https://ftmscan.com/address/0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb)       |
+| Rarity Battle Contract   | [0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7)       |
+| Monster Contract         | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE)       |
+
+
 # (Rarity Battle Contract) PVE: How to play
 
 Click the link below:
@@ -81,13 +90,6 @@ Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful
 
 A complete metaverse contains not only heroes but also monsters. Community developers are welcome to interact with the metaverse to build more fun game scenes. Please feel free to contact us for any developers, art designers, and game planners who are interested in our game. Let's strive together to create the metaverse ecology.
 
-# Addresses
-
-| Name      | Address |
-| ----------- | ----------- |
-| Rarity Contract          | [0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb](https://ftmscan.com/address/0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb)       |
-| Rarity Battle Contract   | [0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7)       |
-| Monster Contract         | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE)       |
 
 
 **Contact Us**
