@@ -22,7 +22,7 @@ contract rarityBattle {
     uint public battleCount = 0;
     
     rarity constant rm = rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
-    monster constant mm = monster(0xDFc9Aaf6C56975a3a498051461A6734af5cbc3CC);
+    monster constant mm = monster(0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE);
 
     mapping(uint => uint) public balanceOf;
 

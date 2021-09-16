@@ -1,0 +1,16 @@
+﻿Number/Suffix,Profession,HP(Health Point),Physical Damage Point,Magical Damage Point,Physical Defence,Magical Defence,Dodge,Hit,Critical,Block,Subtotal
+1,Robber,8,10,5,6,4,10,10,5,2,60
+2,Headsman,9,7,4,6,6,5,10,10,3,60
+3,Guard,12,5,5,10,10,3,4,3,8,60
+4,Hunter,8,9,9,7,7,8,5,5,2,60
+5,Wizard,6,3,12,4,8,10,10,5,2,60
+6,Summoner,6,5,10,8,8,7,3,5,8,60
+7,Warrior,10,12,2,12,4,2,7,7,4,60
+8,Demon,12,8,7,12,5,9,2,2,3,60
+9,Follower,8,9,7,7,9,5,5,5,5,60
+10,Shaman,10,5,5,12,12,5,6,3,2,60
+11,Archer,6,12,3,3,2,12,12,8,2,60
+12,Spear Thrower,6,12,3,4,5,8,8,8,6,60
+13,Immortal,7,5,8,5,5,12,8,6,4,60
+14,Titan,15,5,5,8,8,2,7,2,8,60
+15,Dark Knight,8,9,5,10,6,5,4,8,5,60
