@@ -118,7 +118,7 @@ Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful
 
 Q: 为什么我需要支付10个 FTM 才能获得一个 MonsterNFT ？
 
-A: 目前仅需要支付少量的 gas fee 就可以获得一个 MonsterNFT。为了防止烂刷，所以需要支付一定费用去申领一个 MonsterNFT 。但是最终，通过调用合约获得的 FTM 会奖励给所有对社区有贡献的人。
+A: 目前仅需要支付少量的 gas fee 就可以获得一个 MonsterNFT。为了防止滥刷，所以需要支付一定费用去申领一个 MonsterNFT 。但是最终，通过调用合约获得的 FTM 会奖励给所有对社区有贡献的人。
 
 
 **联系我们**

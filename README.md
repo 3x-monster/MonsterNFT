@@ -101,11 +101,11 @@ A complete metaverse contains not only heroes but also monsters. Community devel
 
 - We will continue to hold community activites to reward good ideas and creative developments for Rarity and MonsterNFT Meta Universe.
 - Welcome to commmit new expansions and front end web pages.
-- Welcome developers with the same interests to connect us.
+- Welcome developers with the same interests to contact us.
 
 ## FQA
 
-Q: Why I have to pay 10FTM to claim one MonsterNFT ?
+Q: Why should I have to pay 10FTM to claim one MonsterNFT ?
 
 A: There's a negligible gas fee for claim one MonsterNFT on Fantom currently. To prevent arbitrary claims, you have to pay a set rate for the claim of MonsterNFT. Eventually FTMs will be awarded to the people who have made an outstanding contribution to the community.
 
