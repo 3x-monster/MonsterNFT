@@ -104,6 +104,19 @@ Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful
 
 在一个完整的元宇宙生态里，不仅有英雄，还需要有怪物。欢迎社区开发者调用它，一起创造出各种好玩的游戏场景。请有兴趣的开发者、美术设计、游戏策划联系我们，共同创建元宇宙生态。加油～
 
+## 社区 & 奖励
+
+- 我们将持续开展社区活动并奖励为 Rarity 和 MonsterNFT 提供好的点子和创造性贡献的社区成员。
+- 欢迎提交合约扩展和前端页面。
+- 欢迎志同道合的朋友联系我们.
+
+## FQA
+
+Q: 为什么我需要支付10个 FTM 才能获得一个 MonsterNFT ？
+
+A: 目前仅需要支付少量的 gas fee 就可以获得一个 MonsterNFT。为了防止烂刷，所以需要支付一定费用去申领一个 MonsterNFT 。但是最终，通过调用合约获得的 FTM 会奖励给所有对社区有贡献的人。
+
+
 **联系我们**
 
 Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)

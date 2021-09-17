@@ -85,6 +85,19 @@ Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful
 
 A complete metaverse contains not only heroes but also monsters. Community developers are welcome to interact with the metaverse to build more fun game scenes. Please feel free to contact us for any developers, art designers, and game planners who are interested in our game. Let's strive together to create the metaverse ecology.
 
+## Community & Rewards
+
+- We will continue to hold community activites to reward good ideas and creative developments for Rarity and MonsterNFT Meta Universe.
+- Welcome to commmit new expansions and front end web pages.
+- Welcome developers with the same interests to connect us.
+
+## FQA
+
+Q: Why I have to pay 10FTM to claim one MonsterNFT ?
+
+A: There's a negligible gas fee for claim one MonsterNFT on Fantom currently. To prevent arbitrary claims, you have to pay a set rate for the claim of MonsterNFT. Eventually FTMs will be awarded to the people who have made an outstanding contribution to the community.
+
+
 **Contact Us**
 
 Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)
