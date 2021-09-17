@@ -22,7 +22,7 @@ Click the link below:
 
   Make sure the ID of the Rarity hero belongs to your address
 
-![Untitled](.gitbook/assets/Untitled.png)
+![Untitled](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README/guide.png)
 
 * Scene I: wipe out a specific monster
   * Method 1: specific monster + specific level
@@ -67,13 +67,13 @@ The total amount of Monster NFT is 11,000. Among which, the first 10,000 are ran
 
 Monster's property is constituted of 60 points of basic properties and 30 points of random properties. The basic properties are as follows:
 
-[Instantly View](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README%2045600350dd3a4a71aaddb5cc7b5d87f7/Instantly%20View%20542f0c2db21a4273bd49d2ff81a40d13.csv)
+[Instantly View](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README/Instantly1.csv)
 
 ### Monster Dictionary
 
 There are 79 kinds of monsters and 15 kinds of careers that have the corresponding numbers as follows:
 
-[Instantly View](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README%2045600350dd3a4a71aaddb5cc7b5d87f7/Instantly%20View%20d694f54fdd854b21a9556976ca5be3c0.csv)
+[Instantly View](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README/Instantly2.csv)
 
 ### Monster Prefix
 

@@ -21,7 +21,7 @@
 
 - 确保输入的Rarity英雄ID属于您的账户
 
-![Untitled](README%2045600350dd3a4a71aaddb5cc7b5d87f7/Untitled.png)
+![Untitled](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README/guide.png)
 
 - 场景一：消灭指定的怪物
 
@@ -68,15 +68,12 @@
 
     Monster NFT is a kind of NFT assets randomized generated and stored on blockchain with different names, prefessions, basic attribute value and random attribute value, which can be used in any scene. The rarity of monster NFT is determined by its peofession, arrtribute value and game ecology. Level, scene and image is ommitted as part of further expansions.
 
-## 合约地址
-
-[https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE)
 
 ## 召唤
 
-- Step1.进入合约：[https://ftmscan.com/](https://ftmscan.com/)xxxxx
+- Step1.进入合约：[https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE)
 
-- Step2.用Claim函数支付10ftm召唤怪兽
+- Step2.用Claim函数支付**10ftm**召唤怪兽
 
 ## NFT介绍
 
@@ -88,13 +85,14 @@
 
     每个Monster的属性值由60点的基础属性值和30点的随机属性值构成。基础属性值如下：
 
-[立即查看](README%2045600350dd3a4a71aaddb5cc7b5d87f7/Instantly%20View%20542f0c2db21a4273bd49d2ff81a40d13.csv)
+[立即查看](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README/Instantly1.csv)
+
 
 ### 怪物字典
 
     共有79种怪物，15类职业，每类职业都有相应的编号。如下：
 
-[立即查看](README%2045600350dd3a4a71aaddb5cc7b5d87f7/Instantly%20View%20d694f54fdd854b21a9556976ca5be3c0.csv)
+[立即查看](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README/Instantly2.csv)
 
 ### 怪物前缀
 
