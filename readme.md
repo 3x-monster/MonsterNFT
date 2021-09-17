@@ -1,7 +1,5 @@
 # README中文版
 
-## README中文版
-
 **致敬 Rarity 和 Loot**
 
 ## **合约地址**
