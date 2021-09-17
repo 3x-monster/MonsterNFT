@@ -1,4 +1,4 @@
-# README中文版
+# README
 
 **致敬 Rarity 和 Loot**
 
