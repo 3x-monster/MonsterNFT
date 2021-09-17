@@ -1,8 +1,6 @@
 # README
 
-{% page-ref page="untitled.md" %}
-
-## README
+{% page-ref page="readme.md" %}
 
 **Salute to Rarity and Loot**
 
