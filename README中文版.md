@@ -66,7 +66,7 @@
 
 ## 简述
 
-    Monster NFT is a kind of NFT assets randomized generated and stored on blockchain with different names, prefessions, basic attribute value and random attribute value, which can be used in any scene. The rarity of monster NFT is determined by its peofession, arrtribute value and game ecology. Level, scene and image is ommitted as part of further expansions.
+MonsterNFT是一种随机产生并储存在区块链上的NFT资产，有不同的名称、职业、基础属性值和随机属性值。您可以把它应用在任何场景中。它的稀有度是通过职业、属性和游戏生态共同决定的。等级、场景和形象将作为进一步扩展的部分。
 
 
 ## 召唤
@@ -79,30 +79,30 @@
 
 ### 数量与分配
 
-    MonsterNFT总量11000个，1～10000由社区用户随机获得，10001～11000属于开发团队。
+MonsterNFT总量11000个，1～10000由社区用户随机获得，10001～11000属于开发团队。
 
 ### 职业和基础属性值
 
-    每个Monster的属性值由60点的基础属性值和30点的随机属性值构成。基础属性值如下：
+每个Monster的属性值由60点的基础属性值和30点的随机属性值构成。基础属性值如下：
 
-[立即查看](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README/Instantly1.csv)
+[立即查看](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README/Instantly1.csv)
 
 
 ### 怪物字典
 
-    共有79种怪物，15类职业，每类职业都有相应的编号。如下：
+共有79种怪物，15类职业，每类职业都有相应的编号。如下：
 
-[立即查看](https://github.com/crypto-shuraba/MonsterNFT/tree/56312831be1ccf922dde49fddcb0c283b752589e/README/Instantly2.csv)
+[立即查看](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README/Instantly2.csv)
 
 ### 怪物前缀
 
-    我们为怪物设计了一些有意思的形容词，随机组合。如下：
+我们为怪物设计了一些有意思的形容词，随机组合。如下：
 
-    Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful,Overjoyed,Sorrowful,Blusterous,Degraded
+Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful,Overjoyed,Sorrowful,Blusterous,Degraded
 
 # 未来展望
 
-    在一个完整的元宇宙生态里，不仅有英雄，还需要有怪物。欢迎社区开发者调用它，一起创造出各种好玩的游戏场景。请有兴趣的开发者、美术设计、游戏策划联系我们，共同创建元宇宙生态。加油～
+在一个完整的元宇宙生态里，不仅有英雄，还需要有怪物。欢迎社区开发者调用它，一起创造出各种好玩的游戏场景。请有兴趣的开发者、美术设计、游戏策划联系我们，共同创建元宇宙生态。加油～
 
 **联系我们**
 
