@@ -6,11 +6,19 @@
 
 ## Addresses
 
-| Name | Address |
-| :--- | :--- |
-| Rarity Contract | [0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb](https://ftmscan.com/address/0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb) |
+| Name                   | Address                                                                                                              |
+| :--------------------- | :------------------------------------------------------------------------------------------------------------------- |
+| Rarity Contract        | [0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb](https://ftmscan.com/address/0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb) |
 | Rarity Battle Contract | [0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7) |
-| Monster Contract | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE) |
+| Monster Contract       | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE) |
+
+<br />
+
+## Front End
+
+[monsternft.vercel.app](https://monsternft.vercel.app)
+
+<br />
 
 ## \(Rarity Battle Contract\) PVE: How to play
 
@@ -18,32 +26,36 @@ Click the link below:
 
 [https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7#writeContract)
 
-* Prerequisite:
+- Prerequisite:
 
   Make sure the ID of the Rarity hero belongs to your address
 
 ![Untitled](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README/guide.png)
 
-* Scene I: wipe out a specific monster
-  * Method 1: specific monster + specific level
+- Scene I: wipe out a specific monster
+
+  - Method 1: specific monster + specific level
 
     Call Battle function, input Rarity Token ID, Monster Token ID and Monster Level.
 
-  * Method 2: specific monster only
+  - Method 2: specific monster only
 
     Call Battle function, input Rarity Token ID, Monster Token ID and 0 for Monster Level \(Monster Level will be the same as your Rarity hero' s level\)
-* Scene II: Encounter
-  * Method 1: random monster + specific level
+
+- Scene II: Encounter
+
+  - Method 1: random monster + specific level
 
     Call Battle function, input Rarity Token ID, Monster Level and 0 for Monster Token ID.
 
-  * Method 2: random monster + specific level
+  - Method 2: random monster + specific level
 
     Call Battle function, input Rarity Token ID, 0 for monster Token ID and Monster Level.
-* Notice: 1. 0 means random for monster selection 2. 0 means the same level as your Rarity hero' s level 3. The amount of copper is positively correlated with monster's level, the higher the level is, the more copper you'll get. 4. The ratio to win is decided by level difference, the higher hero's level is than monster's level, the more likely you're going to win.
-* The formula to win:
-  * When hero's level is greater than or equal with monster's level, x is the level difference, y is ratio to win, y = \(x^2+4\)/\(x^2+5\)
-  * When monster's level is greater than hero's level, x is the level difference, y is ratio to win, y = 1/\(x^2+2\)
+
+- Notice: 1. 0 means random for monster selection 2. 0 means the same level as your Rarity hero' s level 3. The amount of copper is positively correlated with monster's level, the higher the level is, the more copper you'll get. 4. The ratio to win is decided by level difference, the higher hero's level is than monster's level, the more likely you're going to win.
+- The formula to win:
+  - When hero's level is greater than or equal with monster's level, x is the level difference, y is ratio to win, y = \(x^2+4\)/\(x^2+5\)
+  - When monster's level is greater than hero's level, x is the level difference, y is ratio to win, y = 1/\(x^2+2\)
 
 ## \(Monster Contract\) MonsterNFT Instruction
 
@@ -89,11 +101,10 @@ A complete metaverse contains not only heroes but also monsters. Community devel
 
 Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)
 
-Twitter: [https://twitter.com/Crypto\_Shuraba](https://twitter.com/Crypto_Shuraba)
+Twitter: [https://twitter.com/Crypto_Shuraba](https://twitter.com/Crypto_Shuraba)
 
 **Link Exchange**
 
 Rarity: [https://github.com/andrecronje/rarity](https://github.com/andrecronje/rarity)
 
 Loot: [https://www.lootproject.com/](https://www.lootproject.com/)
-
