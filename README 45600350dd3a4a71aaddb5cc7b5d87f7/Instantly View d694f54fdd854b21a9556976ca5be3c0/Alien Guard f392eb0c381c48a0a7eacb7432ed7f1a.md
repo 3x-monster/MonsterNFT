@@ -1,4 +1,0 @@
-# Alien Guard
-
-Number/suffix: 3
-Profession: Guard
