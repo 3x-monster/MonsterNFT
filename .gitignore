@@ -5,3 +5,4 @@ flattened/
 truffle-config.js
 package-lock.json
 .vscode/
+rarity/
