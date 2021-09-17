@@ -1,6 +1,6 @@
 # README
 
-{% page-ref page="readme.md" %}
+[中文版指南](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README%E4%B8%AD%E6%96%87%E7%89%88.md)
 
 **Salute to Rarity and Loot**
 
