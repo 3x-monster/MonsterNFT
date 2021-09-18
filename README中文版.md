@@ -119,22 +119,28 @@ Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful
 ## FQA
 
 Q: 你们要做什么？
+
 A：初期，我们为Rarity开发了PVE模式的Battle合约，发现没有怪物，于是设计了MonsterNFT。然后又发现，第一版对战逻辑不适用了，又重新开发了Battle合约。当踩完很多坑之后，终于明确了发展方向：我们要为Rarity社区做完整游戏，包括不限于：开发更好用的前端，更精彩的对战场景以及怪物NFT。
 
 Q: 为什么我需要支付10个 FTM 才能获得一个 MonsterNFT ？
+
 A: 如果仅需要支付 gas fee 就可以获得 MonsterNFT，我们担忧NFT会过度集中。是为了防止滥刷，而设置了条件。最终，FTM 会奖励给社区成员。比如，开发者、创造贡献的人。
 
 Q: 持有MonsterNFT对我有什么好处？
+
 A: 在游戏角度分析，Monster是PVE的重要组成部分。在元宇宙游戏里不仅有Rarity英雄人物，还需要反面人物。在DeFi角度分析，MonsterNFT可以被任何Battle合约调用，随着调用次数的增加，持有它就是持有一份资产。它可能会给你带来源源不断的现金流。
 
 Q: PVE能获得什么？
+
 A: 我们开发的PVE模式，是利用Battle合约调用 RarityNFT 和 MonsterNFT 对战的一次尝试和示例。如果您胜利了，可以获得一些铜币，战胜的怪物级别越高，获得的奖励越多。欢迎更多开发者参与建设。
 
 Q: 铜币有什么用？
+
 A：铜币可以用来购买装备和其它游戏元素，未来也可获得空投。如果你有更好的创意，欢迎提交到：[https://github.com/crypto-shuraba/MonsterNFT/issues](https://github.com/crypto-shuraba/MonsterNFT/issues)  
 如果被采用，会得到奖励。
 
 Q: 参与游戏建设会得到什么？
+
 A: 随着越来越多的人加入我们，我们会将治理权限交给社区成员。未来游戏的经济模型，副本设计，发展方向等，将由社区投票决定。早期支持者，会更容易获得权利。
 
 
