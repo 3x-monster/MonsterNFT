@@ -123,7 +123,7 @@ A: Monster is a critical part of a game. There are not only Rarity Summoners but
 
 Q: What can I get from PVE?
 
-A: The PVE game model that we have developed is a first attempt to lets the RarityNFT an MonsterNFT  battle from each other. Your Summoner can get some copper if it wins. the higher the monster level, the more Copper coins there are. We will be glad to have more people involved in.
+A: The PVE game model that we have developed is a first attempt to lets the RarityNFT and MonsterNFT  battle from each other. Your Summoner can get some copper if it wins. the higher the monster level, the more Copper coins there are. We will be glad to have more people involved in.
 
 Q: What's the use of copper?
 
