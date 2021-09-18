@@ -107,33 +107,27 @@ A complete metaverse contains not only heroes but also monsters. Community devel
 
 ## FQA
 
-Q: What do you guys want to do?
-
+**Q: What do you guys want to do?**  
 A: At the very beginning, we developed the Battle smart contract for Rarity. After that, we found that there were no monsters in the game, so we designed and developed the Monster NFT. The Monster NFT raised new logical demands for the smart contract, so we optimized the Battle smart contract. Experienced all these problems above, we clarified our goal is to develop a complete game for Rarity Commune, which Includes not limited to developing a better interface, constructing more exciting battle scenes and Monster NFT as follows:
 ![image](https://user-images.githubusercontent.com/90686742/133881379-4a057c9f-e92f-4f8c-bab6-148930244c3c.png)
 
-
-Q: Why should I have to pay 10FTM to claim one MonsterNFT ?
-
+**Q: Why should I have to pay 10FTM to claim one MonsterNFT ?**  
 A: There's a negligible gas fee for claim one MonsterNFT on Fantom currently. To prevent arbitrary claims and over-concentration, you have to pay a set rate for the claim of MonsterNFT. Eventually FTMs will be awarded to the people who have made an outstanding contribution to the community.
 
-Q: What's the benefit of holding MonsterNFT?
-
+**Q: What's the benefit of holding MonsterNFT?**  
 A: Monster is a critical part of a game. There are not only Rarity Summoners but also opposites in Meta Universe. MonsterNFT can be extended by any contracts. As it becomes more and more popular, it's getting more and more valuable.
 
-Q: What can I get from PVE?
-
+**Q: What can I get from PVE?**  
 A: The PVE game model that we have developed is a first attempt to lets the RarityNFT and MonsterNFT  battle from each other. Your Summoner can get some copper if it wins. the higher the monster level, the more Copper coins there are. We will be glad to have more people involved in.
 
-Q: What's the use of copper?
-
+**Q: What's the use of copper?**  
 A: Copper can be used to buy equipments and other game elements. You may get some airdrops based on your Summoners total copper in the future. If you have amazing ideas, please submit to [https://github.com/crypto-shuraba/MonsterNFT/issues](https://github.com/crypto-shuraba/MonsterNFT/issues) 
 If your ideas adopted, you will get some rewards.
 
-Q: What can we get from the game?
-
+**Q: What can we get from the game?**  
 A: We will give the governance authority to community members as more and more people involved in. The economic model of the game,  design of the Meta Universe, direction of the development will be decided by the community. Early participants will get more power.
 
+## Others 
 
 **Contact Us**
 
