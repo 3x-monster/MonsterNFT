@@ -119,7 +119,8 @@ Angry,Hungry,Scary,Damned,Corrupt,Gloomy,Horrific,Ghostly,Freaky,Amnesic,Painful
 ## FQA
 
 **Q: 你们要做什么？**  
-A：初期，我们为Rarity开发了PVE模式的Battle合约，发现没有怪物，于是设计了MonsterNFT。然后又发现，第一版对战逻辑不适用了，又重新开发了Battle合约。当踩完很多坑之后，终于明确了发展方向：我们要为Rarity社区做完整游戏，包括不限于：开发更好用的前端，更精彩的对战场景以及怪物NFT。
+A：初期，我们为Rarity开发了PVE模式的Battle合约，发现没有怪物，于是设计了MonsterNFT。然后又发现，第一版对战逻辑不适用了，又重新开发了Battle合约。当踩完很多坑之后，终于明确了发展方向：我们要为Rarity社区做完整游戏，包括不限于：开发更好用的前端，更精彩的对战场景以及怪物NFT。如下图：
+![image](https://user-images.githubusercontent.com/90686742/133883932-09c5191d-7924-4ad1-b978-fcdf9bda9b04.png)
 
 **Q: 为什么我需要支付10个 FTM 才能获得一个 MonsterNFT ？**  
 A: 如果仅需要支付 gas fee 就可以获得 MonsterNFT，我们担忧NFT会过度集中。是为了防止滥刷，而设置了条件。最终，FTM 会奖励给社区成员。比如，开发者、创造贡献的人。
