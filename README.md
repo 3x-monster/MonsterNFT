@@ -18,6 +18,8 @@
 
 [monsternft.vercel.app](https://monsternft.vercel.app)
 
+[monsternft-mint-list.pages.dev](https://monsternft-mint-list.pages.dev/)
+
 <br />
 
 ## \(Rarity Battle Contract\) PVE: How to play
