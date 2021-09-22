@@ -15,10 +15,11 @@
 <br />
 
 ## Front End
+[rarity.metaland.game](https://rarity.metaland.game/)
 
 [monsternft.vercel.app](https://monsternft.vercel.app)
 
-[monsternft-mint-list.pages.dev](https://monsternft-mint-list.pages.dev/)
+[monster.metaland.game](https://monster.metaland.game/)
 
 <br />
 
@@ -109,7 +110,7 @@ A complete metaverse contains not only heroes but also monsters. Community devel
 
 **Q: What do you guys want to do?**  
 A: At the very beginning, we developed the Battle smart contract for Rarity. After that, we found that there were no monsters in the game, so we designed and developed the Monster NFT. The Monster NFT raised new logical demands for the smart contract, so we optimized the Battle smart contract. Experienced all these problems above, we clarified our goal is to develop a complete game for Rarity Commune, which Includes not limited to developing a better interface, constructing more exciting battle scenes and Monster NFT as follows:
-![image](https://user-images.githubusercontent.com/90686742/133883884-7bb5e2cf-f647-4026-8537-ef5c9a4cb2a9.png)
+![image](https://user-images.githubusercontent.com/90686742/134322059-9be061db-c6ec-4921-8145-5407012265a8.png)
 
 **Q: Why should I have to pay 10FTM to claim one MonsterNFT ?**  
 A: There's a negligible gas fee for claim one MonsterNFT on Fantom currently. To prevent arbitrary claims and over-concentration, you have to pay a set rate for the claim of MonsterNFT. Eventually FTMs will be awarded to the people who have made an outstanding contribution to the community.
