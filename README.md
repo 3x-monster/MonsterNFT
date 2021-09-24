@@ -1,6 +1,5 @@
 # README
 
-[中文版指南](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README%E4%B8%AD%E6%96%87%E7%89%88.md)
 
 **Salute to Rarity and Loot**
 
@@ -130,6 +129,8 @@ If your ideas adopted, you will get some rewards.
 A: We will give the governance authority to community members as more and more people involved in. The economic model of the game,  design of the Meta Universe, direction of the development will be decided by the community. Early participants will get more power.
 
 ## Others 
+
+[中文版指南](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README%E4%B8%AD%E6%96%87%E7%89%88.md)
 
 **Contact Us**
 
