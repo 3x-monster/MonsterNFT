@@ -130,8 +130,6 @@ A: We will give the governance authority to community members as more and more p
 
 ## Others 
 
-[中文版指南](https://github.com/crypto-shuraba/MonsterNFT/blob/main/README%E4%B8%AD%E6%96%87%E7%89%88.md)
-
 **Contact Us**
 
 Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)
