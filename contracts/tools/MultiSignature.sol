@@ -30,6 +30,8 @@ contract MultiSignature {
         _;
     }
 
+    event Voted(address sender, uint index, bool isApproved);
+
     function get_proposals_length() external view returns (uint) {
         return proposals.length;
     }
@@ -46,6 +48,8 @@ contract MultiSignature {
         }
 
         isVoted[_index][msg.sender] = true;
+
+        emit Voted(msg.sender, _index, _isApproved);
     }
 
     function is_apporved(uint _index) view external returns(string memory _symbol, uint _approved, address _operator, bool _arg){
