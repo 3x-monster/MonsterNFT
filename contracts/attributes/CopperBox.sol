@@ -28,9 +28,12 @@ contract CopperBox {
     event Transfer(string subject, uint indexed from, uint indexed to, uint amount);
     event Whitelist(string symbol, uint index, address operator, bool arg);
 
-    function mint_to_summoner(uint _summnoer, uint _amount) external {
-        require(isApproved[msg.sender]);
+    modifier is_approved() {
+        require(isApproved[msg.sender], "Not approved");
+        _;
+    }
 
+    function mint_to_summoner(uint _summnoer, uint _amount) external is_approved{
         totalSupply += _amount;
         totalSupplyOfSummoner += _amount;
         totalSupplyOfOperator[msg.sender] += _amount;
@@ -41,9 +44,7 @@ contract CopperBox {
         emit Transfer("Summoner", _summnoer, _summnoer, _amount);
     }
 
-    function mint_to_monster(uint _monster, uint _amount) external {
-        require(isApproved[msg.sender]);
-
+    function mint_to_monster(uint _monster, uint _amount) external is_approved{
         totalSupply += _amount;
         totalSupplyOfMonster += _amount;
         totalSupplyOfOperator[msg.sender] += _amount;
@@ -54,18 +55,14 @@ contract CopperBox {
         emit Transfer("Monster", _monster, _monster, _amount);
     }
 
-    function transfer_to_summoner(uint _from, uint _to, uint _amount) external {
-        require(isApproved[msg.sender]);
-
+    function transfer_to_summoner(uint _from, uint _to, uint _amount) external is_approved{
         balanceOfSummoner[_from] -= _amount;
         balanceOfSummoner[_to] += _amount;
 
         emit Transfer("Summoner", _from, _to, _amount);
     }
 
-    function transfer_to_monster(uint _from, uint _to, uint _amount) external {
-        require(isApproved[msg.sender]);
-
+    function transfer_to_monster(uint _from, uint _to, uint _amount) external is_approved{
         balanceOfMonster[_from] -= _amount;
         balanceOfMonster[_to] += _amount;
 
