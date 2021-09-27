@@ -3,9 +3,12 @@ pragma solidity ^0.8.7;
 
 
 contract MultiSignature {
-    address constant public a = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2;
-    address constant public b = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
-    address constant public c = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    // z
+    address constant public a = 0x2E62C9F8D794337728ddEfB8fD9b7457A8cde090; 
+    // K
+    address constant public b = 0x4f18a84affe7d03E6824A076f3c02F726bE16866;
+    // H
+    address constant public c = 0x9D944Ba1541903e6D7E2e8720620Fc20F3df990c;
 
     struct Proposal {
         string symbol;

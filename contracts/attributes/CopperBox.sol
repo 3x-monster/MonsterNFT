@@ -18,7 +18,7 @@ contract CopperBox {
     mapping(address => uint) public totalSupplyOfOperatorOfSummoner;
     mapping(address => uint) public totalSupplyOfOperatorOfMonster;
     
-    MultiSignature constant ms = MultiSignature(0x692a70D2e424a56D2C6C27aA97D1a86395877b3A);
+    MultiSignature constant ms = MultiSignature(0x7B4b69B489c2b1000a61c3bfa9934194eCE68159);
 
     mapping(uint => uint) public balanceOfSummoner;
     mapping(uint => uint) public balanceOfMonster;
