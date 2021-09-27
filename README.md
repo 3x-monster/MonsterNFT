@@ -10,7 +10,7 @@
 | Rarity Contract        | [0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb](https://ftmscan.com/address/0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb) |
 | Monster Contract       | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE) |
 | Rarity batch execution| [0x160fb9E3352549f4d0eB521a1C651d8c0FBb1f07](https://ftmscan.com/address/0x160fb9E3352549f4d0eB521a1C651d8c0FBb1f07) |
-| ~~Rarity batch execution~~(deprecated) | [~~0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8~~](https://ftmscan.com/address/0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8) |
+| Rarity batch execution | [0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8](https://ftmscan.com/address/0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8) |
 | ~~Rarity Battle Contract~~(deprecated) | [~~0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7~~](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7) |
 
 <br />
