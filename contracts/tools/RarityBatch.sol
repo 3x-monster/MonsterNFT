@@ -46,7 +46,7 @@ contract RarityBatch {
         }
     }
     
-    function batch_claim_gold(uint[] calldata _summoners) external {
+    function batch_claim_gold(uint[] calldata _summoners) public {
         for (uint i = 0; i < _summoners.length; i++) {
             if(rm.level(_summoners[i]) >= 2 && rm.level(_summoners[i]) > rg.claimed(_summoners[i])){
                 rg.claim(_summoners[i]);
@@ -60,7 +60,20 @@ contract RarityBatch {
         }
     }
 
-    function is_approved(uint[] calldata _summoners) external view returns (bool[] memory _is_approved) {
+    function approve_all_not_approved(uint[] calldata _summoners) public {
+        for (uint i = 0; i < _summoners.length; i++) {
+            if(!is_approved(_summoners[i])){
+                rm.approve(address(this), _summoners[i]);
+            }
+        }
+    }
+
+    function batch_approve_and_claim_gold(uint[] calldata _summoners) external{
+        approve_all_not_approved(_summoners);
+        batch_claim_gold(_summoners);
+    }
+
+    function is_all_approved(uint[] calldata _summoners) external view returns (bool[] memory _is_approved) {
         _is_approved = new bool[](_summoners.length);
         
         for (uint i = 0; i < _summoners.length; i++) {
@@ -68,7 +81,7 @@ contract RarityBatch {
         }
     }
 
-    function is_approved(uint _summoner) external view returns (bool) {
+    function is_approved(uint _summoner) public view returns (bool) {
         return (rm.getApproved(_summoner) == address(this));
     }
     
