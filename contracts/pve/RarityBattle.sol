@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-interface rarity {
+interface IRarity {
     function level(uint) external view returns (uint);
     function getApproved(uint) external view returns (address);
     function ownerOf(uint) external view returns (address);
 }
 
-interface monster {
+interface IMonster {
     function next_monster() external view returns (uint);
     function ownerOf(uint) external view returns (address);
 }
@@ -21,8 +21,8 @@ contract rarityBattle {
 
     uint public battleCount = 0;
     
-    rarity constant rm = rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
-    monster constant mm = monster(0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE);
+    IRarity constant rm = IRarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
+    IMonster constant mm = IMonster(0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE);
 
     mapping(uint => uint) public balanceOf;
 

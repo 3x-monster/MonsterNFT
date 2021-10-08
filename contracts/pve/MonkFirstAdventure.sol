@@ -2,7 +2,7 @@
 pragma solidity ^0.8.7;
 
 
-interface rarity {
+interface IRarity {
     function level(uint) external view returns (uint);
     function getApproved(uint) external view returns (address);
     function ownerOf(uint) external view returns (address);
@@ -18,11 +18,11 @@ struct ability_score {
     uint32 charisma;
 }
 
-interface rarity_attributes{
+interface IRarityAttributes{
     function ability_scores(uint) external view returns (ability_score calldata);    
 }
 
-interface monster {
+interface IMonster {
     function next_monster() external view returns (uint);
     function ownerOf(uint) external view returns (address);
     function health_Point(uint) external view returns (uint);
@@ -32,17 +32,17 @@ interface monster {
     function hit(uint) external view returns (uint);
 }
 
-interface copper_box{
+interface ICopperBox{
     function mint_to_summoner(uint, uint) external;
     function mint_to_monster(uint, uint) external; 
 }
 
 contract MonkFirstAdventure {
     
-    rarity constant rm = rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
-    monster constant mm = monster(0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE);
-    rarity_attributes constant ra = rarity_attributes(0xB5F5AF1087A8DA62A23b08C00C6ec9af21F397a1);
-    copper_box constant cb = copper_box(0x253e55363F9440B532D13C228CB633Bac94F3b7C);
+    IRarity constant rm = IRarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
+    IMonster constant mm = IMonster(0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE);
+    IRarityAttributes constant ra = IRarityAttributes(0xB5F5AF1087A8DA62A23b08C00C6ec9af21F397a1);
+    ICopperBox constant cb = ICopperBox(0x253e55363F9440B532D13C228CB633Bac94F3b7C);
 
     mapping(uint => uint) public baseAttackBonus;
     mapping(uint => uint) public unarmedDamage;

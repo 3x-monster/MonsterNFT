@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-interface rarity {
+interface IRarity {
     function adventure(uint _summoner) external;
 
     function level_up(uint _summoner) external;
@@ -22,15 +22,15 @@ interface rarity {
 
 }
 
-interface rarity_gold {
+interface IRaritygold {
     function claim(uint summoner) external;
     
     function claimed(uint summoner) external pure returns (uint);
 }
 
 contract RarityBatch {
-    rarity constant rm = rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
-    rarity_gold constant rg = rarity_gold(0x2069B76Afe6b734Fb65D1d099E7ec64ee9CC76B2);
+    IRarity constant rm = IRarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
+    IRaritygold constant rg = IRaritygold(0x2069B76Afe6b734Fb65D1d099E7ec64ee9CC76B2);
 
     function batch_adventure(uint[] calldata _summoners) external{
         for (uint i = 0; i < _summoners.length; i++) {

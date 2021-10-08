@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.7;
+pragma solidity ^0.8.7;
 
-interface MultiSignature {
+interface IMultiSignature {
     function is_apporved(uint) external view returns (string memory, uint, address, bool);
 }
 
@@ -18,7 +18,7 @@ contract CopperBox {
     mapping(address => uint) public totalSupplyOfOperatorOfSummoner;
     mapping(address => uint) public totalSupplyOfOperatorOfMonster;
     
-    MultiSignature constant ms = MultiSignature(0x7B4b69B489c2b1000a61c3bfa9934194eCE68159);
+    IMultiSignature constant ms = IMultiSignature(0x7B4b69B489c2b1000a61c3bfa9934194eCE68159);
 
     mapping(uint => uint) public balanceOfSummoner;
     mapping(uint => uint) public balanceOfMonster;
