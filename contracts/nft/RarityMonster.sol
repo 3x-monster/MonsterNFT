@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+// deprecated
 contract rarityMonster is ERC721 {
     uint public next_monster;
 
