@@ -32,23 +32,28 @@ interface monster {
     function hit(uint) external view returns (uint);
 }
 
+interface copper_box{
+    function mint_to_summoner(uint, uint) external;
+    function mint_to_monster(uint, uint) external; 
+}
+
 contract MonkFirstAdventure {
     
     rarity constant rm = rarity(0xce761D788DF608BD21bdd59d6f4B54b2e27F25Bb);
     monster constant mm = monster(0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE);
     rarity_attributes constant ra = rarity_attributes(0xB5F5AF1087A8DA62A23b08C00C6ec9af21F397a1);
-
-
-    event Transfer(uint indexed from, uint indexed to, uint amount);
-    event Battle(uint indexed summoner, uint indexed monster, bool isWin, uint copperAmount);
+    copper_box constant cb = copper_box(0x253e55363F9440B532D13C228CB633Bac94F3b7C);
 
     mapping(uint => uint) public baseAttackBonus;
     mapping(uint => uint) public unarmedDamage;
 
-    mapping(uint => mapping(uint=>AdventureLog[])) public results;
+    mapping(uint => mapping(uint=>AdventureLog[])) public processes;
 
-    mapping(uint => uint) public adventure_count;
-    mapping(uint => uint) public wins_count;
+    mapping(uint => uint) public adventureCount;
+    mapping(uint => uint) public winsCount;
+
+    mapping(uint => uint) public rewards;
+    mapping(uint =>  mapping(uint=>uint)) public result;
 
     struct AdventureLog{
         uint round; 
@@ -74,6 +79,13 @@ contract MonkFirstAdventure {
         unarmedDamage[5] = 8;
         unarmedDamage[6] = 8;
         unarmedDamage[7] = 8;
+
+        rewards[2] = 10e18;
+        rewards[3] = 10e18;
+        rewards[4] = 10e18;
+        rewards[5] = 12e18;
+        rewards[6] = 12e18;
+        rewards[7] = 14e18;
     }
 
     // 10:0 
@@ -168,25 +180,25 @@ contract MonkFirstAdventure {
             (summonerDamage, monsterDamage) = damage(round, _summoner, _monster);
             if (_order == 0){
                 (monsterHP, isAttacked) = cal(summonerAttack, monsterAC, monsterHP, summonerDamage);
-                results[_summoner][_count].push(AdventureLog(round, 0, 1, summonerDamage, monsterHP, isAttacked));
+                processes[_summoner][_count].push(AdventureLog(round, 0, 1, summonerDamage, monsterHP, isAttacked));
                 if (monsterHP <= 0) {
                     break;
                 }
 
                 (summonerHP, isAttacked) = cal(monsterAttack, summonerAC, summonerHP, monsterDamage);
-                results[_summoner][_count].push(AdventureLog(round, 1, 0, monsterDamage, summonerHP, isAttacked));
+                processes[_summoner][_count].push(AdventureLog(round, 1, 0, monsterDamage, summonerHP, isAttacked));
                 if (summonerHP <= 0){
                     break;
                 }
             } else {
                 (summonerHP, isAttacked) = cal(monsterAttack, summonerAC, summonerHP, monsterDamage);
-                results[_summoner][_count].push(AdventureLog(round, 1, 0, monsterDamage, summonerHP, isAttacked));
+                processes[_summoner][_count].push(AdventureLog(round, 1, 0, monsterDamage, summonerHP, isAttacked));
                 if (summonerHP <= 0){
                     break;
                 }
 
                 (monsterHP, isAttacked) = cal(summonerAttack, monsterAC, monsterHP, summonerDamage);
-                results[_summoner][_count].push(AdventureLog(round, 0, 1, summonerDamage, monsterHP, isAttacked));
+                processes[_summoner][_count].push(AdventureLog(round, 0, 1, summonerDamage, monsterHP, isAttacked));
                 if (monsterHP <= 0) {
                     break;
                 }
@@ -195,13 +207,13 @@ contract MonkFirstAdventure {
         
     }
 
-    function adventure(uint _summoner) external returns(uint){
+    function adventure(uint _summoner) external returns(uint, uint){
         require(_isApprovedOrOwner(_summoner), "Only approved or owner");
         require(rm.class(_summoner) == 6, "Only Monk");
         require(rm.level(_summoner) >= 2 && rm.level(_summoner) <= 7, "Requires greater than or equal to 2 and less than or equal to 7");
 
-        uint count = adventure_count[_summoner] + 1; 
-        adventure_count[_summoner] = count;
+        uint count = adventureCount[_summoner] + 1; 
+        adventureCount[_summoner] = count;
 
         uint _monster = uint(keccak256(abi.encodePacked(block.timestamp))) % mm.next_monster() + 1;
 
@@ -210,11 +222,17 @@ contract MonkFirstAdventure {
         int summonerHP; int monsterHP;
 
         (summonerHP, monsterHP) = fight(_summoner, _monster, order, count);
+
+        result[_summoner][count] = 0;
         if (monsterHP <= 0){
-            wins_count[_summoner] += 1;
+            winsCount[_summoner] += 1;
+            cb.mint_to_summoner(_summoner, rewards[rm.level(_summoner)]);
+            result[_summoner][count] = rewards[rm.level(_summoner)];
+        } else {
+            cb.mint_to_monster(_monster, rewards[rm.level(_summoner)]);
         }
 
-        return results[_summoner][count].length;
+        return (count, processes[_summoner][count].length);
     }
 
     function _isApprovedOrOwner(uint _summoner) internal view returns (bool) {
