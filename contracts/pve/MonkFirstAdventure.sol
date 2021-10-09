@@ -53,7 +53,11 @@ contract MonkFirstAdventure {
     mapping(uint => uint) public winsCount;
 
     mapping(uint => uint) public rewards;
-    mapping(uint =>  mapping(uint=>uint)) public result;
+    mapping(uint =>  mapping(uint=>AdventureResult)) public result;
+
+    mapping(uint => uint) public lastAdventure;
+
+    uint constant DAY = 1 days;
 
     struct AdventureLog{
         uint round; 
@@ -62,6 +66,11 @@ contract MonkFirstAdventure {
         int damage;
         int HP;
         uint8 isAttacked;
+    }
+
+    struct AdventureResult{
+        uint monster;
+        uint copper;
     }
 
     // level range 2-7
@@ -80,12 +89,12 @@ contract MonkFirstAdventure {
         unarmedDamage[6] = 8;
         unarmedDamage[7] = 8;
 
-        rewards[2] = 10e18;
-        rewards[3] = 10e18;
-        rewards[4] = 10e18;
-        rewards[5] = 12e18;
-        rewards[6] = 12e18;
-        rewards[7] = 14e18;
+        rewards[2] = 60e18;
+        rewards[3] = 60e18;
+        rewards[4] = 60e18;
+        rewards[5] = 80e18;
+        rewards[6] = 80e18;
+        rewards[7] = 100e18;
     }
 
     // 10:0 
@@ -211,6 +220,7 @@ contract MonkFirstAdventure {
         require(_isApprovedOrOwner(_summoner), "Only approved or owner");
         require(rm.class(_summoner) == 6, "Only Monk");
         require(rm.level(_summoner) >= 2 && rm.level(_summoner) <= 7, "Requires greater than or equal to 2 and less than or equal to 7");
+        require(block.timestamp > lastAdventure[_summoner], "Once a day");
 
         uint count = adventureCount[_summoner] + 1; 
         adventureCount[_summoner] = count;
@@ -223,14 +233,17 @@ contract MonkFirstAdventure {
 
         (summonerHP, monsterHP) = fight(_summoner, _monster, order, count);
 
-        result[_summoner][count] = 0;
+        AdventureResult memory ar = AdventureResult(_monster, 0);
         if (monsterHP <= 0){
             winsCount[_summoner] += 1;
             cb.mint_to_summoner(_summoner, rewards[rm.level(_summoner)]);
-            result[_summoner][count] = rewards[rm.level(_summoner)];
+            ar.copper = rewards[rm.level(_summoner)];
         } else {
             cb.mint_to_monster(_monster, rewards[rm.level(_summoner)]);
         }
+        result[_summoner][count] = ar;
+
+        lastAdventure[_summoner] = block.timestamp + DAY;
 
         return (count, processes[_summoner][count].length);
     }
