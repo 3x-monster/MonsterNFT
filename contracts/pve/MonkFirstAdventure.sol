@@ -113,8 +113,11 @@ contract MonkFirstAdventure {
 
     // Monk d8
     // Adds Constitution bonus
-    function hit_die(uint _summoner) public view returns(int){
-        return int(roll(0, 0, 8)) + ability_modifier(ra.ability_scores(_summoner).constitution);
+    function hit_die(uint _summoner) public view returns(int _hp){
+        _hp = int(roll(0, 0, 8)) + ability_modifier(ra.ability_scores(_summoner).constitution);
+        if(_hp <= 0){
+            _hp = 1;
+        }
     }
 
     //d6
