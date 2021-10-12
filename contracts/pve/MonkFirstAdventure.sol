@@ -175,9 +175,9 @@ contract MonkFirstAdventure {
         return (_hp, isAttacked);
     }
 
-    function fight(uint _summoner, uint _monster, uint8 _order, uint _count) internal returns(int summonerHP, int monsterHP){
-        summonerHP = hit_die(_summoner);
-        monsterHP = hit_die_of_monster(_monster);
+    function fight(uint _summoner, uint _monster, uint8 _order, uint _count) internal returns(int, int){
+        int summonerHP = hit_die(_summoner);
+        int monsterHP = hit_die_of_monster(_monster);
         int summonerDamage; int monsterDamage;
         int summonerAttack; int monsterAttack; 
         uint round = 0;
@@ -186,7 +186,8 @@ contract MonkFirstAdventure {
         (summonerAC, monsterAC) = ac(_summoner, _monster);
 
         // round, offence, defence, damage, HP, isAttacked
-        while (summonerHP > 0 && monsterHP > 0){
+        // limit round
+        while (summonerHP > 0 && monsterHP > 0 && round <= 2){
             round += 1;
             (summonerAttack, monsterAttack) = attack(round, _summoner, _monster);
             (summonerDamage, monsterDamage) = damage(round, _summoner, _monster);
@@ -194,32 +195,41 @@ contract MonkFirstAdventure {
                 (monsterHP, isAttacked) = cal(summonerAttack, monsterAC, monsterHP, summonerDamage);
                 processes[_summoner][_count].push(AdventureLog(round, 0, 1, summonerDamage, monsterHP, isAttacked));
                 if (monsterHP <= 0) {
-                    break;
+                    return (summonerHP, monsterHP);
                 }
 
                 (summonerHP, isAttacked) = cal(monsterAttack, summonerAC, summonerHP, monsterDamage);
                 processes[_summoner][_count].push(AdventureLog(round, 1, 0, monsterDamage, summonerHP, isAttacked));
                 if (summonerHP <= 0){
-                    break;
+                    return (summonerHP, monsterHP);
                 }
             } else {
                 (summonerHP, isAttacked) = cal(monsterAttack, summonerAC, summonerHP, monsterDamage);
                 processes[_summoner][_count].push(AdventureLog(round, 1, 0, monsterDamage, summonerHP, isAttacked));
                 if (summonerHP <= 0){
-                    break;
+                    return (summonerHP, monsterHP);
                 }
 
                 (monsterHP, isAttacked) = cal(summonerAttack, monsterAC, monsterHP, summonerDamage);
                 processes[_summoner][_count].push(AdventureLog(round, 0, 1, summonerDamage, monsterHP, isAttacked));
                 if (monsterHP <= 0) {
-                    break;
+                    return (summonerHP, monsterHP);
                 }
             }
         }
         
+        if (summonerHP >= monsterHP) {
+            processes[_summoner][_count].push(AdventureLog(round+1, 0, 1, monsterHP, 0, 1));
+        } else {
+            processes[_summoner][_count].push(AdventureLog(round+1, 1, 0, summonerHP, 0, 1));
+        }
+
+        return (summonerHP, 0);
     }
 
-    function adventure(uint _summoner) external returns(uint, uint){
+    event CombatResult(uint summoner, uint monster, uint copper, uint count, uint len);
+
+    function adventure(uint _summoner) external{
         require(_isApprovedOrOwner(_summoner), "Only approved or owner");
         require(rm.class(_summoner) == 6, "Only Monk");
         require(rm.level(_summoner) >= 2 && rm.level(_summoner) <= 7, "Requires greater than or equal to 2 and less than or equal to 7");
@@ -248,7 +258,7 @@ contract MonkFirstAdventure {
 
         lastAdventure[_summoner] = block.timestamp + DAY;
 
-        return (count, processes[_summoner][count].length);
+        emit CombatResult(_summoner, _monster, ar.copper, count, processes[_summoner][count].length);
     }
 
     function _isApprovedOrOwner(uint _summoner) internal view returns (bool) {
