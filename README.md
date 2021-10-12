@@ -32,7 +32,7 @@
 
 ### AssetsBox
 
-- [Introduction for Copper Box](https://medium.com/@cryptoshuraba/introduction-for-copper-box-1add78d8b0bc)
+- [Introduction for CopperBox](https://medium.com/@cryptoshuraba/introduction-for-copper-box-1add78d8b0bc)
 
 - [github.com/CryptoShuraba/AssetsBox](https://github.com/CryptoShuraba/AssetsBox)
 
