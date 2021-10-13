@@ -13,7 +13,8 @@
 | Multiple Signature | [0x7B4b69B489c2b1000a61c3bfa9934194eCE68159](https://ftmscan.com/address/0x7B4b69B489c2b1000a61c3bfa9934194eCE68159) |
 | Copper Box | [0x253e55363F9440B532D13C228CB633Bac94F3b7C](https://ftmscan.com/address/0x253e55363F9440B532D13C228CB633Bac94F3b7C) |
 | ~~Rarity batch execution~~ | [~~0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8~~](https://ftmscan.com/address/0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8) |
-| (Dungeons)Monk First Adventure | [0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9](https://ftmscan.com/address/0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9) |
+| ~~(Dungeons)Monk First Adventure~~ | [~~0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9~~](https://ftmscan.com/address/0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9) |
+| (Dungeons)Monk First Adventure | [0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38](https://ftmscan.com/address/0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38) |
 | ~~Rarity Battle Contract~~ | [~~0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7~~](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7) |
 
 <br />

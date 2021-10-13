@@ -175,9 +175,9 @@ contract MonkFirstAdventure {
         return (_hp, isAttacked);
     }
 
-    function fight(uint _summoner, uint _monster, uint8 _order, uint _count) internal returns(int, int){
-        int summonerHP = hit_die(_summoner);
-        int monsterHP = hit_die_of_monster(_monster);
+    function fight(uint _summoner, uint _monster, uint8 _order, uint _count) internal returns(int summonerHP, int monsterHP){
+        summonerHP = hit_die(_summoner);
+        monsterHP = hit_die_of_monster(_monster);
         int summonerDamage; int monsterDamage;
         int summonerAttack; int monsterAttack; 
         uint round = 0;
@@ -220,11 +220,11 @@ contract MonkFirstAdventure {
         
         if (summonerHP >= monsterHP) {
             processes[_summoner][_count].push(AdventureLog(round+1, 0, 1, monsterHP, 0, 1));
+            return (summonerHP, 0);
         } else {
             processes[_summoner][_count].push(AdventureLog(round+1, 1, 0, summonerHP, 0, 1));
+            return (0, monsterHP);
         }
-
-        return (summonerHP, 0);
     }
 
     event CombatResult(uint summoner, uint monster, uint copper, uint count, uint len);
