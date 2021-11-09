@@ -23,7 +23,7 @@ contract Monster2 is ERC721 {
 
     uint total = 2;
 
-    constructor() ERC721("Monster Manifested", "MMS"){
+    constructor() ERC721("Monster2 Manifested", "M2MS"){
         owner = msg.sender;
 
         monster[0] = "Aboleth";
