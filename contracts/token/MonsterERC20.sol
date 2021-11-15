@@ -10,17 +10,17 @@ interface IMultiSignature {
 contract MonsterERC20 is ERC20 {
     uint256 public constant Limitation = 100_000_000e18;
 
-    string public constant name = "Monster";
-    string public constant symbol = "MST";
+    string private constant __name = "Monster";
+    string private constant __symbol = "MST";
 
     IMultiSignature constant ms = IMultiSignature(0x7B4b69B489c2b1000a61c3bfa9934194eCE68159);
 
     mapping(address => bool) public isApproved;
     mapping(uint => bool) public hasBeenProcessed;
 
-    constructor() ERC20(name, symbol){
-        owner = msg.sender;
-    }
+    constructor() ERC20(__name, __symbol){}
+
+    event Whitelist(string symbol, uint index, address operator, bool arg);
 
     modifier is_approved() {
         require(isApproved[msg.sender], "Not approved");
@@ -28,7 +28,7 @@ contract MonsterERC20 is ERC20 {
     }
 
     function mint(address _to, uint256 _value) public is_approved{
-        require(_totalSupply + _value <= Limitation, "Total supply overflow the limitation");
+        require(totalSupply() + _value <= Limitation, "Total supply overflow the limitation");
 
         _mint(_to, _value);
     }
@@ -47,7 +47,7 @@ contract MonsterERC20 is ERC20 {
         (_symbol, approved, operator, arg) = ms.is_apporved(_proposal_index);
         
         require(!hasBeenProcessed[_proposal_index], "Proposal has been processed");
-        require(keccak256(abi.encodePacked(_symbol)) == keccak256(abi.encodePacked(symbol)));
+        require(keccak256(abi.encodePacked(_symbol)) == keccak256(abi.encodePacked(__symbol)));
         require(approved >= 2, "Approved less than 2");
 
         isApproved[operator] = arg;
