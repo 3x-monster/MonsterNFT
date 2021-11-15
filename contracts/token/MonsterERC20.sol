@@ -48,7 +48,7 @@ contract MonsterERC20 is ERC20 {
         
         require(!hasBeenProcessed[_proposal_index], "Proposal has been processed");
         require(keccak256(abi.encodePacked(_symbol)) == keccak256(abi.encodePacked(symbol)));
-        require(approved >= 2, "Less than 2");
+        require(approved >= 2, "Approved less than 2");
 
         isApproved[operator] = arg;
         hasBeenProcessed[_proposal_index] = true;
