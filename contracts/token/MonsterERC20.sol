@@ -8,7 +8,7 @@ interface IMultiSignature {
 }
 
 contract MonsterERC20 is ERC20 {
-    uint256 public constant Limitation = 100000000e18;
+    uint256 public constant Limitation = 100_000_000e18;
 
     string public constant name = "Monster";
     string public constant symbol = "MST";
@@ -31,6 +31,11 @@ contract MonsterERC20 is ERC20 {
         require(_totalSupply + _value <= Limitation, "Total supply overflow the limitation");
 
         _mint(_to, _value);
+    }
+
+    function burn(address _account, uint256 _amount) public is_approved{
+
+        _burn(_account, _amount);
     }
  
     function whitelist(uint _proposal_index) external {
