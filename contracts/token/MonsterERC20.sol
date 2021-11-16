@@ -7,52 +7,61 @@ interface IMultiSignature {
     function is_apporved(uint) external view returns (string memory, uint, address, bool);
 }
 
-contract MonsterERC20 is ERC20 {
+interface IMonsterERC20 {
+    function mint(address to, uint256 amount) external returns (bool);
+
+    function burn(address account, uint256 amount) external returns (bool);
+
+    function whitelist(uint proposalIndex) external;
+
+    event IntoWhitelist(string symbol, uint index, address operator, bool arg);
+}
+
+contract MonsterERC20 is ERC20, IMonsterERC20 {
     uint256 public constant Limitation = 100_000_000e18;
 
-    string private constant __name = "Monster";
-    string private constant __symbol = "MST";
-
-    IMultiSignature constant ms = IMultiSignature(0x7B4b69B489c2b1000a61c3bfa9934194eCE68159);
+    IMultiSignature immutable ms;
 
     mapping(address => bool) public isApproved;
     mapping(uint => bool) public hasBeenProcessed;
 
-    constructor() ERC20(__name, __symbol){}
-
-    event Whitelist(string symbol, uint index, address operator, bool arg);
+    constructor(string memory name_, string memory symbol_, address multiSig_) ERC20(name_, symbol_){
+        ms = IMultiSignature(multiSig_);
+    }
 
     modifier is_approved() {
         require(isApproved[msg.sender], "Not approved");
         _;
     }
 
-    function mint(address _to, uint256 _value) public is_approved{
-        require(totalSupply() + _value <= Limitation, "Total supply overflow the limitation");
+    function mint(address to, uint256 amount) external is_approved override returns (bool) {
+        require(totalSupply() + amount <= Limitation, "Total supply overflow the limitation");
 
-        _mint(_to, _value);
+        _mint(to, amount);
+        return true;
     }
 
-    function burn(address _account, uint256 _amount) public is_approved{
+    function burn(address account, uint256 amount) external is_approved override returns (bool) {
+        _burn(account, amount);
 
-        _burn(_account, _amount);
+        return true;
     }
  
-    function whitelist(uint _proposal_index) external {
-        string memory _symbol;
+    function whitelist(uint proposalIndex) external override {
+        string memory applySymbol;
         uint approved = 0;
         address operator = address(0);
         bool arg = false;
         
-        (_symbol, approved, operator, arg) = ms.is_apporved(_proposal_index);
+        (applySymbol, approved, operator, arg) = ms.is_apporved(proposalIndex);
         
-        require(!hasBeenProcessed[_proposal_index], "Proposal has been processed");
-        require(keccak256(abi.encodePacked(_symbol)) == keccak256(abi.encodePacked(__symbol)));
+        require(!hasBeenProcessed[proposalIndex], "Proposal has been processed");
+        require(keccak256(abi.encodePacked(applySymbol)) == keccak256(abi.encodePacked(symbol())));
         require(approved >= 2, "Approved less than 2");
 
         isApproved[operator] = arg;
-        hasBeenProcessed[_proposal_index] = true;
+        hasBeenProcessed[proposalIndex] = true;
 
-        emit Whitelist(_symbol, _proposal_index, operator, arg);
+        emit IntoWhitelist(symbol(), proposalIndex, operator, arg);
     }
 }
