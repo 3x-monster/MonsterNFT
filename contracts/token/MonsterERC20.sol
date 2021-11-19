@@ -10,7 +10,7 @@ interface IMultiSignature {
 interface IMonsterERC20 {
     function mint(address to, uint256 amount) external returns (bool);
 
-    function burn(address account, uint256 amount) external returns (bool);
+    function burn(uint256 amount) external returns (bool);
 
     function whitelist(uint proposalIndex) external;
 
@@ -41,8 +41,8 @@ contract MonsterERC20 is ERC20, IMonsterERC20 {
         return true;
     }
 
-    function burn(address account, uint256 amount) external is_approved override returns (bool) {
-        _burn(account, amount);
+    function burn(uint256 amount) external override returns (bool) {
+        _burn(msg.sender, amount);
 
         return true;
     }
