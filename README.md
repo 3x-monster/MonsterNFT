@@ -16,7 +16,7 @@
 | ~~(Dungeons)Monk First Adventure~~ | [~~0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9~~](https://ftmscan.com/address/0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9) |
 | (Dungeons)Monk First Adventure | [0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38](https://ftmscan.com/address/0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38) |
 | ~~Rarity Battle Contract~~ | [~~0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7~~](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7) |
-| ~~Monster ERC20 Token~~ | [~~0x152888854378201e173490956085c711f1DeD565~~](https://ftmscan.com/address/0x152888854378201e173490956085c711f1DeD565) |
+| Monster ERC20 Token | [0x152888854378201e173490956085c711f1DeD565](https://ftmscan.com/address/0x152888854378201e173490956085c711f1DeD565) |
 
 <br />
 
