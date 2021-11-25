@@ -17,6 +17,8 @@
 | (Dungeons)Monk First Adventure | [0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38](https://ftmscan.com/address/0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38) |
 | ~~Rarity Battle Contract~~ | [~~0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7~~](https://ftmscan.com/address/0x42b18313fc4b4b93916a2a454f0f0b7c8fde27c7) |
 | Monster ERC20 Token | [0x152888854378201e173490956085c711f1DeD565](https://ftmscan.com/address/0x152888854378201e173490956085c711f1DeD565) |
+| 1 million for LP | [0x9584fBDfdD82A44a991bd7244A06898d2F79eAd2](https://ftmscan.com/address/0x9584fBDfdD82A44a991bd7244A06898d2F79eAd2) |
+
 
 <br />
 

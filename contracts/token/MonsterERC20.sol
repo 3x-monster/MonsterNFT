@@ -20,7 +20,7 @@ interface IMonsterERC20 {
 contract MonsterERC20 is ERC20, IMonsterERC20 {
     uint256 public constant Limitation = 100_000_000e18;
 
-    IMultiSignature immutable ms;
+    IMultiSignature public immutable ms;
 
     mapping(address => bool) public isApproved;
     mapping(uint => bool) public hasBeenProcessed;
