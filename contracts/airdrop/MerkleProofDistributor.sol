@@ -52,11 +52,9 @@ library MerkleProof {
 interface IMerkleProofDistributor {
     function token() external view returns (address);
 
-    function merkleRoot() external view returns (bytes32);
+    function isClaimed(uint8 _phase, uint8 _type, uint256 _index) external view returns (bool);
 
-    function isClaimed(uint256 _index) external view returns (bool);
-
-    function claim(uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external;
+    function claim(uint8 _phase, uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external;
 
     event Claimed(uint256 index, address receiver, uint256 amount);
 }
@@ -68,38 +66,86 @@ interface IMonsterERC20 {
 
 contract MerkleProofDistributor is IMerkleProofDistributor {
     address public immutable override token;
-    bytes32 public immutable override merkleRoot;
 
-    mapping(uint256 => uint256) private claimedBitMap;
+    mapping(uint8 => bytes32) public merkleRoot;
+    mapping(uint8 => mapping (uint8 => mapping(uint256 => uint256))) private claimedBitMap;
+    uint256 public type3DroppedCount;
 
-    constructor(address token_, bytes32 merkleRoot_) {
+    // limit the drops to the rarity per phase
+    uint public constant type3Limit = 30_000;
+
+    uint public startTime;
+    uint public endTime;
+
+    address public immutable owner;
+
+    constructor(address token_, bytes32 merkleRoot1_, bytes32 merkleRoot2_, bytes32 merkleRoot3_, uint startTime_, uint endTime_) {
+        owner = msg.sender;
         token = token_;
-        merkleRoot = merkleRoot_;
+        merkleRoot[1] = merkleRoot1_;
+        merkleRoot[2] = merkleRoot2_;
+        merkleRoot[3] = merkleRoot3_;
+        startTime = startTime_;
+        endTime = endTime_;
     }
 
-    function isClaimed(uint256 _index) public view override returns (bool) {
+    function reset(uint _startTime, uint _endTime) external {
+        require(msg.sender == owner, "Only Owner");
+
+        startTime = _startTime;
+        endTime = _endTime;
+
+        type3DroppedCount = 0;
+    }
+
+    function setRoot(uint8 _type, bytes32 _merkleRoot) external {
+        require(msg.sender == owner, "Only Owner");
+
+        merkleRoot[_type] = _merkleRoot;
+    }
+
+    function isClaimed(uint8 _phase, uint8 _type, uint256 _index) public view override returns (bool) {
         uint256 claimedWordIndex = _index / 256;
         uint256 claimedBitIndex = _index % 256;
-        uint256 claimedWord = claimedBitMap[claimedWordIndex];
+        uint256 claimedWord = claimedBitMap[_phase][_type][claimedWordIndex];
         uint256 mask = (1 << claimedBitIndex);
         return claimedWord & mask == mask;
     }
 
-    function _setClaimed(uint256 _index) private {
-        uint256 claimedWordIndex = _index / 256;
-        uint256 claimedBitIndex = _index % 256;
-        claimedBitMap[claimedWordIndex] = claimedBitMap[claimedWordIndex] | (1 << claimedBitIndex);
+    function isType3Available(uint256 _amount) public view returns (bool) {
+        return type3DroppedCount + _amount/4 <= type3Limit;
     }
 
-    function claim(uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external override {
-        require(!isClaimed(_index), 'Already claimed');
+    function _setClaimed(uint8 _phase, uint8 _type, uint256 _index) private {
+        uint256 claimedWordIndex = _index / 256;
+        uint256 claimedBitIndex = _index % 256;
+        claimedBitMap[_phase][_type][claimedWordIndex] = claimedBitMap[_phase][_type][claimedWordIndex] | (1 << claimedBitIndex);
+    }
+
+    function claim(uint8 _phase, uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external override {
+        require(!isClaimed(_phase, _type, _index), 'Already claimed');
+
+        if (_type == 3){
+            require(isType3Available(_amount), 'Hit the limit');
+        }
 
         bytes32 node = keccak256(abi.encodePacked(_index, _receiver, _amount));
-        require(MerkleProof.verify(_merkleProof, merkleRoot, node), 'Invalid proof');
 
-        _setClaimed(_index);
-        require(IMonsterERC20(token).mint(_receiver, _amount), 'Mint failed');
+        require(MerkleProof.verify(_merkleProof, merkleRoot[_type], node), 'Invalid proof');
 
-        emit Claimed(_index, _receiver, _amount);
+        _setClaimed(_phase, _type, _index);
+        if (_type == 3) {
+            type3DroppedCount += _amount/4;
+        }
+        require(IMonsterERC20(token).mint(_receiver, _amount*1e18/4), 'Mint failed');
+
+        emit Claimed(_index, _receiver, _amount*1e18/4);
+    }
+
+    function isValidated(uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) view external returns (bool){
+
+        bytes32 node = keccak256(abi.encodePacked(_index, _receiver, _amount));
+
+        return MerkleProof.verify(_merkleProof, merkleRoot[_type], node);
     }
 }
