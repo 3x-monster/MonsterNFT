@@ -56,7 +56,7 @@
 
 <br />
 
-## FQA
+## FAQ
 
 **Q: What do you guys want to do?**  
 A: At the very beginning, we developed the Battle smart contract for Rarity. After that, we found that there were no monsters in the game, so we designed and developed the Monster NFT. The Monster NFT raised new logical demands for the smart contract, so we optimized the Battle smart contract. Experienced all these problems above, we clarified our goal is to develop a complete game for Rarity Commune, which Includes not limited to developing a better interface, constructing more exciting battle scenes and Monster NFT as follows:
