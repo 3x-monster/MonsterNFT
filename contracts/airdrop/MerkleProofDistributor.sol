@@ -69,15 +69,17 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
 
     mapping(uint8 => bytes32) public merkleRoot;
     mapping(uint8 => mapping (uint8 => mapping(uint256 => uint256))) private claimedBitMap;
-    uint256 public type3DroppedCount;
-
+    
+    uint private constant phaseLimit = 250_000;
+    uint256 public phaseDroppedCount;
     // limit the drops to the rarity per phase
-    uint public constant type3Limit = 30_000;
+    uint private constant type3Limit = 30_000;
+    uint256 public type3DroppedCount;
 
     uint public startTime;
     uint public endTime;
 
-    address public immutable owner;
+    address private immutable owner;
 
     constructor(address token_, bytes32 merkleRoot1_, bytes32 merkleRoot2_, bytes32 merkleRoot3_, uint startTime_, uint endTime_) {
         owner = msg.sender;
@@ -96,6 +98,7 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         endTime = _endTime;
 
         type3DroppedCount = 0;
+        phaseDroppedCount = 0;
     }
 
     function setRoot(uint8 _type, bytes32 _merkleRoot) external {
@@ -124,6 +127,7 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
 
     function claim(uint8 _phase, uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external override {
         require(!isClaimed(_phase, _type, _index), 'Already claimed');
+        require(phaseDroppedCount <= phaseLimit, 'Hit the phase limit');
 
         if (_type == 3){
             require(isType3Available(_amount), 'Hit the limit');
@@ -137,6 +141,7 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         if (_type == 3) {
             type3DroppedCount += _amount/4;
         }
+        phaseDroppedCount += _amount/4;
         require(IMonsterERC20(token).mint(_receiver, _amount*1e18/4), 'Mint failed');
 
         emit Claimed(_index, _receiver, _amount*1e18/4);
