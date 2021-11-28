@@ -93,7 +93,7 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         phase = phase_;
     }
 
-    function reset(uint _startTime, uint _endTime, uint8 _phase) external {
+    function reset(uint _startTime, uint _endTime, uint8 _phase, uint256 _type3DroppedCount, uint256 _phaseDroppedCount) external {
         require(msg.sender == owner, "Only Owner");
         require(_phase <= 4 && _phase > 0, "Phase error");
 
@@ -101,8 +101,8 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         endTime = _endTime;
         phase = _phase;
 
-        type3DroppedCount = 0;
-        phaseDroppedCount = 0;
+        type3DroppedCount = _type3DroppedCount;
+        phaseDroppedCount = _phaseDroppedCount;
     }
 
     function setRoot(uint8 _type, bytes32 _merkleRoot) external {
