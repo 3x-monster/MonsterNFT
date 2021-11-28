@@ -52,9 +52,9 @@ library MerkleProof {
 interface IMerkleProofDistributor {
     function token() external view returns (address);
 
-    function isClaimed(uint8 _phase, uint8 _type, uint256 _index) external view returns (bool);
+    function isClaimed(uint8 _type, uint256 _index) external view returns (bool);
 
-    function claim(uint8 _phase, uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external;
+    function claim(uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external;
 
     event Claimed(uint256 index, address receiver, uint256 amount);
 }
@@ -78,10 +78,11 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
 
     uint public startTime;
     uint public endTime;
+    uint8 public phase;
 
     address private immutable owner;
 
-    constructor(address token_, bytes32 merkleRoot1_, bytes32 merkleRoot2_, bytes32 merkleRoot3_, uint startTime_, uint endTime_) {
+    constructor(address token_, bytes32 merkleRoot1_, bytes32 merkleRoot2_, bytes32 merkleRoot3_, uint startTime_, uint endTime_, uint8 phase_) {
         owner = msg.sender;
         token = token_;
         merkleRoot[1] = merkleRoot1_;
@@ -89,13 +90,15 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         merkleRoot[3] = merkleRoot3_;
         startTime = startTime_;
         endTime = endTime_;
+        phase = phase_;
     }
 
-    function reset(uint _startTime, uint _endTime) external {
+    function reset(uint _startTime, uint _endTime, uint8 phase_) external {
         require(msg.sender == owner, "Only Owner");
 
         startTime = _startTime;
         endTime = _endTime;
+        phase = phase_;
 
         type3DroppedCount = 0;
         phaseDroppedCount = 0;
@@ -107,10 +110,10 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         merkleRoot[_type] = _merkleRoot;
     }
 
-    function isClaimed(uint8 _phase, uint8 _type, uint256 _index) public view override returns (bool) {
+    function isClaimed(uint8 _type, uint256 _index) public view override returns (bool) {
         uint256 claimedWordIndex = _index / 256;
         uint256 claimedBitIndex = _index % 256;
-        uint256 claimedWord = claimedBitMap[_phase][_type][claimedWordIndex];
+        uint256 claimedWord = claimedBitMap[phase][_type][claimedWordIndex];
         uint256 mask = (1 << claimedBitIndex);
         return claimedWord & mask == mask;
     }
@@ -119,14 +122,14 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         return type3DroppedCount + _amount/4 <= type3Limit;
     }
 
-    function _setClaimed(uint8 _phase, uint8 _type, uint256 _index) private {
+    function _setClaimed(uint8 _type, uint256 _index) private {
         uint256 claimedWordIndex = _index / 256;
         uint256 claimedBitIndex = _index % 256;
-        claimedBitMap[_phase][_type][claimedWordIndex] = claimedBitMap[_phase][_type][claimedWordIndex] | (1 << claimedBitIndex);
+        claimedBitMap[phase][_type][claimedWordIndex] = claimedBitMap[phase][_type][claimedWordIndex] | (1 << claimedBitIndex);
     }
 
-    function claim(uint8 _phase, uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external override {
-        require(!isClaimed(_phase, _type, _index), 'Already claimed');
+    function claim(uint8 _type, uint256 _index, address _receiver, uint256 _amount, bytes32[] calldata _merkleProof) external override {
+        require(!isClaimed(_type, _index), 'Already claimed');
         require(phaseDroppedCount <= phaseLimit, 'Hit the phase limit');
 
         if (_type == 3){
@@ -137,7 +140,7 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
 
         require(MerkleProof.verify(_merkleProof, merkleRoot[_type], node), 'Invalid proof');
 
-        _setClaimed(_phase, _type, _index);
+        _setClaimed(_type, _index);
         if (_type == 3) {
             type3DroppedCount += _amount/4;
         }
