@@ -132,6 +132,8 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         require(!isClaimed(_type, _index), 'Already claimed');
         require(phaseDroppedCount <= phaseLimit, 'Hit the phase limit');
 
+        require(block.timestamp <= endTime && block.timestamp >= startTime, 'Not in the time frame');
+
         if (_type == 3){
             require(isType3Available(_amount), 'Hit the limit');
         }
