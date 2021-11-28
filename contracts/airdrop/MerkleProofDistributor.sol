@@ -93,12 +93,13 @@ contract MerkleProofDistributor is IMerkleProofDistributor {
         phase = phase_;
     }
 
-    function reset(uint _startTime, uint _endTime, uint8 phase_) external {
+    function reset(uint _startTime, uint _endTime, uint8 _phase) external {
         require(msg.sender == owner, "Only Owner");
+        require(_phase <= 4 && _phase > 0, "Phase error");
 
         startTime = _startTime;
         endTime = _endTime;
-        phase = phase_;
+        phase = _phase;
 
         type3DroppedCount = 0;
         phaseDroppedCount = 0;
