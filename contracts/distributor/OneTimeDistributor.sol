@@ -9,22 +9,27 @@ interface IMonsterERC20 {
 contract OneTimeDistributor {
     address public immutable token;
     address public immutable receiver;
-    uint public immutable amount;
-    bool isClaimed = false;
+
+    address private immutable owner;
 
     event Claimed(address receiver, uint256 amount);
 
-    constructor(address token_, address receiver_, uint amount_) {
+    uint public totalSupply;
+    uint public limit = 18000;
+
+    constructor(address token_, address receiver_) {
+        owner = msg.sender;
+
         token = token_;
         receiver = receiver_;
-        amount = amount_;
     }
 
-    function claim() external {
-        require(!isClaimed, 'Already claimed');
+    function claim(uint amount) external {
+        require(msg.sender == owner, "Only Owner");
+        require(totalSupply + amount <= limit);
 
-        isClaimed = true;
-        require(IMonsterERC20(token).mint(receiver, amount), 'Mint failed');
+        totalSupply += amount;
+        require(IMonsterERC20(token).mint(receiver, amount*1e18), 'Mint failed');
 
         emit Claimed(receiver, amount);
     }
