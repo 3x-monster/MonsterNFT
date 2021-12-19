@@ -20,6 +20,7 @@
 | 1 million for LP | [0x9584fBDfdD82A44a991bd7244A06898d2F79eAd2](https://ftmscan.com/address/0x9584fBDfdD82A44a991bd7244A06898d2F79eAd2) |
 | Airdrop | [0xC7A5B7D87d94337E6198E9B89778934BB4ABE410](https://ftmscan.com/address/0xC7A5B7D87d94337E6198E9B89778934BB4ABE410) |
 | Contributors Airdrop | [0xB4c033A20FbA6f94F89DE9B6Ba07DF092E4f5DB9](https://ftmscan.com/address/0xB4c033A20FbA6f94F89DE9B6Ba07DF092E4f5DB9) |
+| Payment of back Airdrop | [0x27E82fC4968CCA30990f9e8ba70C5Bf16DB22b90](https://ftmscan.com/address/0x27E82fC4968CCA30990f9e8ba70C5Bf16DB22b90) |
 
 
 <br />
