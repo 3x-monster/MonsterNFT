@@ -11,7 +11,7 @@
 | Monster Contract       | [0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE](https://ftmscan.com/address/0x2D2f7462197d4cfEB6491e254a16D3fb2d2030EE) |
 | Rarity batch execution| [0x160fb9E3352549f4d0eB521a1C651d8c0FBb1f07](https://ftmscan.com/address/0x160fb9E3352549f4d0eB521a1C651d8c0FBb1f07) |
 | Multiple Signature | [0x7B4b69B489c2b1000a61c3bfa9934194eCE68159](https://ftmscan.com/address/0x7B4b69B489c2b1000a61c3bfa9934194eCE68159) |
-| Copper Box | [0x253e55363F9440B532D13C228CB633Bac94F3b7C](https://ftmscan.com/address/0x253e55363F9440B532D13C228CB633Bac94F3b7C) |
+| ~~Copper Box~~ | [~~0x253e55363F9440B532D13C228CB633Bac94F3b7C~~](https://ftmscan.com/address/0x253e55363F9440B532D13C228CB633Bac94F3b7C) |
 | ~~Rarity batch execution~~ | [~~0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8~~](https://ftmscan.com/address/0x4fb741eaf12ccdeff67f4f03676eef9859a9faa8) |
 | ~~(Dungeons)Monk First Adventure~~ | [~~0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9~~](https://ftmscan.com/address/0xd6F7704AD9ede5Cf090049381dc24f92Ee0ED7e9) |
 | (Dungeons)Monk First Adventure | [0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38](https://ftmscan.com/address/0xbcedCE1e91dDDA15acFD10D0E55febB21FC6Aa38) |
@@ -21,6 +21,15 @@
 | Airdrop | [0xC7A5B7D87d94337E6198E9B89778934BB4ABE410](https://ftmscan.com/address/0xC7A5B7D87d94337E6198E9B89778934BB4ABE410) |
 | Contributors Airdrop | [0xB4c033A20FbA6f94F89DE9B6Ba07DF092E4f5DB9](https://ftmscan.com/address/0xB4c033A20FbA6f94F89DE9B6Ba07DF092E4f5DB9) |
 | Payment of back Airdrop | [0x27E82fC4968CCA30990f9e8ba70C5Bf16DB22b90](https://ftmscan.com/address/0x27E82fC4968CCA30990f9e8ba70C5Bf16DB22b90) |
+| Monster Reborn (2.0) | [0x881c9c392F4E02Dd599dE22CaDAa98977c4CFB90](https://ftmscan.com/address/0x881c9c392F4E02Dd599dE22CaDAa98977c4CFB90) |
+| Copper New | [0x53d55024E171d4e80a319e237DBfd26041B86873](https://ftmscan.com/address/0x53d55024E171d4e80a319e237DBfd26041B86873) |
+| Copper Set | [0x664a8b622fBC635dCD7541FD8DCfad47A4239C9D](https://ftmscan.com/address/0x664a8b622fBC635dCD7541FD8DCfad47A4239C9D) |
+| Copper NPC | [0x6b5C0412CF82Cc26F9Ef7349E6f3c950314a80ad](https://ftmscan.com/address/0x6b5C0412CF82Cc26F9Ef7349E6f3c950314a80ad) |
+| Meat | [0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad](https://ftmscan.com/address/0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad) |
+| Meat Set | [0x89836BF1c1E82f57Eb615c0D82A1e626aEd50EF8](https://ftmscan.com/address/0x89836BF1c1E82f57Eb615c0D82A1e626aEd50EF8) |
+| Meat NPC | [0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce](https://ftmscan.com/address/0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce) |
+| Copper Migration | [0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81](https://ftmscan.com/address/0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81) |
+| Breeding | [0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a](https://ftmscan.com/address/0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a) |
 
 
 <br />

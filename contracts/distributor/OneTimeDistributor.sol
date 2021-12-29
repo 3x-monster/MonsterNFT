@@ -15,13 +15,14 @@ contract OneTimeDistributor {
     event Claimed(address receiver, uint256 amount);
 
     uint public totalSupply;
-    uint public limit = 18000;
+    uint public immutable limit;
 
-    constructor(address token_, address receiver_) {
+    constructor(address token_, address receiver_, uint limit_) {
         owner = msg.sender;
 
         token = token_;
         receiver = receiver_;
+        limit = limit_;
     }
 
     function claim(uint amount) external {
