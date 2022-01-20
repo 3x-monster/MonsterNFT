@@ -30,7 +30,11 @@
 | Meat NPC | [0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce](https://ftmscan.com/address/0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce) |
 | Copper Migration | [0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81](https://ftmscan.com/address/0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81) |
 | Breeding | [0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a](https://ftmscan.com/address/0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a) |
-
+| Hatching | [0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23](https://ftmscan.com/address/0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23) |
+| gMST | [0x1E907521fAdDc57c5e5E25407539931D28589D06](https://ftmscan.com/address/0x1E907521fAdDc57c5e5E25407539931D28589D06) |
+| MST Staking => gMST | [0x6551Dc6623A6AeeAAf3907167519567121769Fb9](https://ftmscan.com/address/0x6551Dc6623A6AeeAAf3907167519567121769Fb9) |
+| Encounter Mining Filed | [0xE39982B660Ca783fdAc782C7cFae3D7c00477490](https://ftmscan.com/address/0xE39982B660Ca783fdAc782C7cFae3D7c00477490) |
+| gMST set | [0xbe4778F735565247C553206fc3CD9E9bA3FDba81](https://ftmscan.com/address/0xbe4778F735565247C553206fc3CD9E9bA3FDba81) |
 
 <br />
 
