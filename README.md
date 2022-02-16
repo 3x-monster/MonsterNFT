@@ -35,16 +35,18 @@
 | MST Staking => gMST | [0x6551Dc6623A6AeeAAf3907167519567121769Fb9](https://ftmscan.com/address/0x6551Dc6623A6AeeAAf3907167519567121769Fb9) |
 | Encounter Mining Filed | [0xE39982B660Ca783fdAc782C7cFae3D7c00477490](https://ftmscan.com/address/0xE39982B660Ca783fdAc782C7cFae3D7c00477490) |
 | gMST set | [0xbe4778F735565247C553206fc3CD9E9bA3FDba81](https://ftmscan.com/address/0xbe4778F735565247C553206fc3CD9E9bA3FDba81) |
+| Hatching | [0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23](https://ftmscan.com/address/0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23) |
+| Monster Reborn market | [0x5f763e533eD7a9D4b04E9F27c35B5260475A3a48](https://ftmscan.com/address/0x5f763e533eD7a9D4b04E9F27c35B5260475A3a48) |
+| Copper/MST Market | [0x1cAe50f669ce74998d4330235A53B8E916172459](https://ftmscan.com/address/0x1cAe50f669ce74998d4330235A53B8E916172459) |
+| Monster Genesis Market | [0x3f7402b37DFc02C4c5f42A53FE45A9Dd48C7b2b0](https://ftmscan.com/address/0x3f7402b37DFc02C4c5f42A53FE45A9Dd48C7b2b0) |
+| Monster Reborn Hatched Market | [0x74C483B093ae60CB7141A66C124A734219004117](https://ftmscan.com/address/0x74C483B093ae60CB7141A66C124A734219004117) |
+
 
 <br />
 
 ## Front End
 
-- [RarityLand -- rarity.metaland.game](https://rarity.metaland.game/)
-
-- [MonsterNFT -- monster.metaland.game](https://monster.metaland.game/)
-
-- [Dungeons Of Rarity -- dungeons.metaland.game](http://dungeons.metaland.game/)
+- [Metaland metaland.game](https://metaland.game/)
 
 <br />
 
@@ -103,6 +105,8 @@ A: We will give the governance authority to community members as more and more p
 Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)
 
 Twitter: [https://twitter.com/Crypto_Shuraba](https://twitter.com/Crypto_Shuraba)
+
+Discord: [https://discord.com/invite/4re29XnZwt](https://discord.com/invite/4re29XnZwt)
 
 **Link Exchange**
 
