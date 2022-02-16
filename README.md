@@ -70,25 +70,27 @@
 
 <br />
 
-## Front End
+<!-- ## Front End
 
 - [Metaland metaland.game](https://metaland.game/)
 
-<br />
+<br /> -->
 
 ## Projects
 
-### AssetsBox
+### Metaland
 
-- [Introduction for CopperBox](https://medium.com/@cryptoshuraba/introduction-for-copper-box-1add78d8b0bc)
-
-- [github.com/CryptoShuraba/AssetsBox](https://github.com/CryptoShuraba/AssetsBox)
+- [metaland.game](https://metaland.game/)
 
 <br />
 
-## Guides
+## Documents
 
-- [MonsterNFT Instruction](https://medium.com/@cryptoshuraba/monsternft-instruction-7c238fed7042)
+- [Medium](http://medium.com/@cryptoshuraba)
+
+- [Litepaper](https://metaland.game/pdf/litepaper.pdf)
+
+- [Wiki](https://wiki.metaland.game/)
 
 <br />
 
