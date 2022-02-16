@@ -106,6 +106,8 @@ Gmail: [cryptoshuraba@gmail.com](mailto:cryptoshuraba@gmail.com)
 
 Twitter: [https://twitter.com/Crypto_Shuraba](https://twitter.com/Crypto_Shuraba)
 
+Discord: [https://discord.com/invite/4re29XnZwt](https://discord.com/invite/4re29XnZwt)
+
 **Link Exchange**
 
 Rarity: [https://github.com/andrecronje/rarity](https://github.com/andrecronje/rarity)
