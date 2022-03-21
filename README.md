@@ -15,6 +15,7 @@
 | Copper New            | [0x53d55024E171d4e80a319e237DBfd26041B86873](https://ftmscan.com/address/0x53d55024E171d4e80a319e237DBfd26041B86873) |
 | Meat                  | [0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad](https://ftmscan.com/address/0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad) |
 | gMST                  | [0x1E907521fAdDc57c5e5E25407539931D28589D06](https://ftmscan.com/address/0x1E907521fAdDc57c5e5E25407539931D28589D06) |
+| Achievement Badges    | [0xd1ebdffab1b4e9f36009101674a46876f83c1692](https://ftmscan.com/address/0xd1ebdffab1b4e9f36009101674a46876f83c1692) |
 
 ### Business
 
@@ -36,6 +37,8 @@
 | Monster Reborn Hatched Market | [0x74C483B093ae60CB7141A66C124A734219004117](https://ftmscan.com/address/0x74C483B093ae60CB7141A66C124A734219004117) |
 | Auction                       | [0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507](https://ftmscan.com/address/0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507) |
 | Encounter Mining Filed 2      | [0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C](https://ftmscan.com/address/0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C) |
+| Hatching badges               | [0x1822387bff5B1F0EFa7e0a8A2D91b54A789f6b46](https://ftmscan.com/address/0x1822387bff5B1F0EFa7e0a8A2D91b54A789f6b46) |
+| Mining v1 badges              | [](https://ftmscan.com/address/)                                                                                     |
 
 ### Rarity
 
