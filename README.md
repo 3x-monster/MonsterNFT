@@ -38,7 +38,8 @@
 | Auction                       | [0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507](https://ftmscan.com/address/0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507) |
 | Encounter Mining Filed 2      | [0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C](https://ftmscan.com/address/0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C) |
 | Hatching badges               | [0x1822387bff5B1F0EFa7e0a8A2D91b54A789f6b46](https://ftmscan.com/address/0x1822387bff5B1F0EFa7e0a8A2D91b54A789f6b46) |
-| Mining v1 badges              | [](https://ftmscan.com/address/)                                                                                     |
+| Mining v1 badges              | [0x4eC3878F2ad15C30F2fF608388C8ADDbDA53d213](https://ftmscan.com/address/0x4eC3878F2ad15C30F2fF608388C8ADDbDA53d213) |
+| Auction badges                | [0xb50652Ec3393207eCc4080273ddd80B2e8491A19](https://ftmscan.com/address/0xb50652Ec3393207eCc4080273ddd80B2e8491A19) |
 
 ### Rarity
 
