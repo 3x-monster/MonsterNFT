@@ -15,27 +15,32 @@
 | Copper New            | [0x53d55024E171d4e80a319e237DBfd26041B86873](https://ftmscan.com/address/0x53d55024E171d4e80a319e237DBfd26041B86873) |
 | Meat                  | [0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad](https://ftmscan.com/address/0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad) |
 | gMST                  | [0x1E907521fAdDc57c5e5E25407539931D28589D06](https://ftmscan.com/address/0x1E907521fAdDc57c5e5E25407539931D28589D06) |
+| Achievement Badges    | [0xd1ebdffab1b4e9f36009101674a46876f83c1692](https://ftmscan.com/address/0xd1ebdffab1b4e9f36009101674a46876f83c1692) |
 
 ### Business
 
-| Name                          | Address                                                                                                              |
-| :---------------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| Copper Set                    | [0x664a8b622fBC635dCD7541FD8DCfad47A4239C9D](https://ftmscan.com/address/0x664a8b622fBC635dCD7541FD8DCfad47A4239C9D) |
-| Copper NPC                    | [0x6b5C0412CF82Cc26F9Ef7349E6f3c950314a80ad](https://ftmscan.com/address/0x6b5C0412CF82Cc26F9Ef7349E6f3c950314a80ad) |
-| Meat Set                      | [0x89836BF1c1E82f57Eb615c0D82A1e626aEd50EF8](https://ftmscan.com/address/0x89836BF1c1E82f57Eb615c0D82A1e626aEd50EF8) |
-| Meat NPC                      | [0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce](https://ftmscan.com/address/0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce) |
-| Copper Migration              | [0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81](https://ftmscan.com/address/0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81) |
-| Breeding                      | [0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a](https://ftmscan.com/address/0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a) |
-| Hatching                      | [0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23](https://ftmscan.com/address/0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23) |
-| MST Staking => gMST           | [0x6551Dc6623A6AeeAAf3907167519567121769Fb9](https://ftmscan.com/address/0x6551Dc6623A6AeeAAf3907167519567121769Fb9) |
-| Encounter Mining Filed        | [0xE39982B660Ca783fdAc782C7cFae3D7c00477490](https://ftmscan.com/address/0xE39982B660Ca783fdAc782C7cFae3D7c00477490) |
-| gMST set                      | [0xbe4778F735565247C553206fc3CD9E9bA3FDba81](https://ftmscan.com/address/0xbe4778F735565247C553206fc3CD9E9bA3FDba81) |
-| Monster Reborn market         | [0x5f763e533eD7a9D4b04E9F27c35B5260475A3a48](https://ftmscan.com/address/0x5f763e533eD7a9D4b04E9F27c35B5260475A3a48) |
-| Copper/MST Market             | [0x1cAe50f669ce74998d4330235A53B8E916172459](https://ftmscan.com/address/0x1cAe50f669ce74998d4330235A53B8E916172459) |
-| Monster Genesis Market        | [0x3f7402b37DFc02C4c5f42A53FE45A9Dd48C7b2b0](https://ftmscan.com/address/0x3f7402b37DFc02C4c5f42A53FE45A9Dd48C7b2b0) |
-| Monster Reborn Hatched Market | [0x74C483B093ae60CB7141A66C124A734219004117](https://ftmscan.com/address/0x74C483B093ae60CB7141A66C124A734219004117) |
-| Auction                       | [0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507](https://ftmscan.com/address/0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507) |
-| Encounter Mining Filed 2      | [0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C](https://ftmscan.com/address/0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C) |
+| Name                             | Address                                                                                                              |
+| :------------------------------- | :------------------------------------------------------------------------------------------------------------------- |
+| Copper Set                       | [0x664a8b622fBC635dCD7541FD8DCfad47A4239C9D](https://ftmscan.com/address/0x664a8b622fBC635dCD7541FD8DCfad47A4239C9D) |
+| Copper NPC                       | [0x6b5C0412CF82Cc26F9Ef7349E6f3c950314a80ad](https://ftmscan.com/address/0x6b5C0412CF82Cc26F9Ef7349E6f3c950314a80ad) |
+| Meat Set                         | [0x89836BF1c1E82f57Eb615c0D82A1e626aEd50EF8](https://ftmscan.com/address/0x89836BF1c1E82f57Eb615c0D82A1e626aEd50EF8) |
+| Meat NPC                         | [0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce](https://ftmscan.com/address/0x9C5FC9e2016bFFA00DcE7F40eB0aa475238A39Ce) |
+| Copper Migration                 | [0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81](https://ftmscan.com/address/0x1cEfFB110456106fdcd4f5Db0137c350fEbF8A81) |
+| Breeding                         | [0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a](https://ftmscan.com/address/0xCAD5efb576B8971E51B1fe772b8564B4FB93a55a) |
+| Hatching                         | [0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23](https://ftmscan.com/address/0x0C2b094daFFf6c0D7eaaf9862e568Ccb35049C23) |
+| MST Staking => gMST              | [0x6551Dc6623A6AeeAAf3907167519567121769Fb9](https://ftmscan.com/address/0x6551Dc6623A6AeeAAf3907167519567121769Fb9) |
+| Encounter Mining Filed           | [0xE39982B660Ca783fdAc782C7cFae3D7c00477490](https://ftmscan.com/address/0xE39982B660Ca783fdAc782C7cFae3D7c00477490) |
+| gMST set                         | [0xbe4778F735565247C553206fc3CD9E9bA3FDba81](https://ftmscan.com/address/0xbe4778F735565247C553206fc3CD9E9bA3FDba81) |
+| Monster Reborn market            | [0x5f763e533eD7a9D4b04E9F27c35B5260475A3a48](https://ftmscan.com/address/0x5f763e533eD7a9D4b04E9F27c35B5260475A3a48) |
+| Copper/MST Market                | [0x1cAe50f669ce74998d4330235A53B8E916172459](https://ftmscan.com/address/0x1cAe50f669ce74998d4330235A53B8E916172459) |
+| Monster Genesis Market           | [0x3f7402b37DFc02C4c5f42A53FE45A9Dd48C7b2b0](https://ftmscan.com/address/0x3f7402b37DFc02C4c5f42A53FE45A9Dd48C7b2b0) |
+| Monster Reborn Hatched Market    | [0x74C483B093ae60CB7141A66C124A734219004117](https://ftmscan.com/address/0x74C483B093ae60CB7141A66C124A734219004117) |
+| Auction                          | [0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507](https://ftmscan.com/address/0x1386DdB4Ce81F3482Db4C4c8E82A9cFC4B948507) |
+| Encounter Mining Filed 2         | [0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C](https://ftmscan.com/address/0xEC7A3aa843f29E0c836704dFef20c8Bab41D2A4C) |
+| Hatching badges                  | [0x1822387bff5B1F0EFa7e0a8A2D91b54A789f6b46](https://ftmscan.com/address/0x1822387bff5B1F0EFa7e0a8A2D91b54A789f6b46) |
+| Mining v1 badges                 | [0x4eC3878F2ad15C30F2fF608388C8ADDbDA53d213](https://ftmscan.com/address/0x4eC3878F2ad15C30F2fF608388C8ADDbDA53d213) |
+| Auction badges                   | [0xb50652Ec3393207eCc4080273ddd80B2e8491A19](https://ftmscan.com/address/0xb50652Ec3393207eCc4080273ddd80B2e8491A19) |
+| Compensation for mining season 2 | [0x7e4FFE5d626E6f0dd5cB9A668963250De76c8A77](https://ftmscan.com/address/0x7e4FFE5d626E6f0dd5cB9A668963250De76c8A77) |
 
 ### Rarity
 
