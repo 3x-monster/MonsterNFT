@@ -42,6 +42,15 @@
 | Auction badges                   | [0xb50652Ec3393207eCc4080273ddd80B2e8491A19](https://ftmscan.com/address/0xb50652Ec3393207eCc4080273ddd80B2e8491A19) |
 | Compensation for mining season 2 | [0x7e4FFE5d626E6f0dd5cB9A668963250De76c8A77](https://ftmscan.com/address/0x7e4FFE5d626E6f0dd5cB9A668963250De76c8A77) |
 
+### VE & FARM
+
+| Name                      | Address                                                                                                              |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------------- |
+| vedcMST                   | [0xc8034b3dF18Ea4d607E86D6b6Bf23E2A8Ed70F89](https://ftmscan.com/address/0xc8034b3dF18Ea4d607E86D6b6Bf23E2A8Ed70F89) |
+| ve dis                    | [0xf417AEECb6Ce5a672528553625868a9018c0068F](https://ftmscan.com/address/0xf417AEECb6Ce5a672528553625868a9018c0068F) |
+| lp incentive for MST/FTM  | [0x06bFdfF7366DE711F363105F446f8399663db749](https://ftmscan.com/address/0x06bFdfF7366DE711F363105F446f8399663db749) |
+| lp incentive for MST/USDC | [0xc13926C5CB2636a29381Da874b1e2686163DC226](https://ftmscan.com/address/0xc13926C5CB2636a29381Da874b1e2686163DC226) |
+
 ### Rarity
 
 | Name                   | Address                                                                                                              |
