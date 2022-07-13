@@ -16,6 +16,8 @@
 | Meat                  | [0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad](https://ftmscan.com/address/0x9F0D3E73f3b5265ea8c1DB7F2D59883062d463ad) |
 | gMST                  | [0x1E907521fAdDc57c5e5E25407539931D28589D06](https://ftmscan.com/address/0x1E907521fAdDc57c5e5E25407539931D28589D06) |
 | Achievement Badges    | [0xd1ebdffab1b4e9f36009101674a46876f83c1692](https://ftmscan.com/address/0xd1ebdffab1b4e9f36009101674a46876f83c1692) |
+| Level                 | [0xF77D58aAB7e0660E0cb845320167155b9E22F17c](https://ftmscan.com/address/0xF77D58aAB7e0660E0cb845320167155b9E22F17c) |
+| Claim Assets          | [0x3d0A1e6C121193f74f98C424c7185da93B71f9E5](https://ftmscan.com/address/0x3d0A1e6C121193f74f98C424c7185da93B71f9E5) |
 
 ### Business
 
@@ -93,25 +95,25 @@
 
 ### Metaland
 
-- [metaland.game](https://metaland.game/)
+-   [metaland.game](https://metaland.game/)
 
 <br />
 
 ## Documents
 
-- [Medium](http://medium.com/@cryptoshuraba)
+-   [Medium](http://medium.com/@cryptoshuraba)
 
-- [Litepaper](https://metaland.game/pdf/litepaper.pdf)
+-   [Litepaper](https://metaland.game/pdf/litepaper.pdf)
 
-- [Wiki](https://wiki.metaland.game/)
+-   [Wiki](https://wiki.metaland.game/)
 
 <br />
 
 ## Community & Rewards
 
-- We will continue to hold community activites to reward good ideas and creative developments for Rarity and MonsterNFT Meta Universe.
-- Welcome to commmit new expansions and front end web pages.
-- Welcome developers with the same interests to contact us.
+-   We will continue to hold community activites to reward good ideas and creative developments for Rarity and MonsterNFT Meta Universe.
+-   Welcome to commmit new expansions and front end web pages.
+-   Welcome developers with the same interests to contact us.
 
 <br />
 
